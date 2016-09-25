@@ -1,0 +1,639 @@
+﻿<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="要出发周边游带你发现内蒙古周末好去处,内蒙古各城市周边好玩的地方,新鲜有趣的周边游景点,展会,周末亲子活动推荐。全新角度、更多创意玩法尽在要出发！">
+    <meta name="keywords" content="内蒙古周末好去处,内蒙古周边好玩的地方,内蒙古周末去哪玩,内蒙古周边游,内蒙古亲子游">
+    <title>内蒙古周末好去处</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/fun-place.css">
+    <script>
+        var w_userInfo = 0;
+        var w_apiUrl = 'http://api.yaochufa.com/';
+        var w_apiVersion = '3.0';
+        var w_apiSystem = 'pc';
+        var w_currentUrl = 'http://you.yaochufa.com/';
+        var w_siteUrl = 'http://www.yaochufa.com';
+        var w_apiphpUrl = 'http://apiphp.yaochufa.com/';
+    </script>    <script>
+        var wwwUrl = 'http://you.yaochufa.com';
+        var staticPath = '/static/';
+        var currentScript = '/index.php';
+    </script>
+</head>
+<body>
+    <!-- 公用头部模块 -->
+    <div class="header">
+        <!-- 顶部导航条 -->
+        <div class="top-nav">
+            <div class="wrapper clearfix">
+                <div class="fl">
+                    <span class="hello">您好，欢迎来到要出发!</span>
+                    <span class="current">
+                        <i class="icon icon-location"></i>
+                        <em id="J-cur-province"></em>
+                    </span>
+                    <span class="change" id="J-change-province">
+                        <em>更换省份</em>
+                        <i class="icon icon-triangle-bottom"></i>
+                    </span>
+                </div>
+                <div class="fr">
+                    <span class="login" id="J-login-reg">[<a href="http://www.yaochufa.com/user/login?returnurl=http://you.yaochufa.com/funny" id="J-login">登录</a>]&nbsp;[<a href="http://www.yaochufa.com/user/register?returnurl=/" id="J-reg">免费注册</a>]</span>                    <span class="viewed" id="J-open-viewd">
+                        <i class="icon icon-clock"></i>
+                        <em>最近浏览</em>
+                        <i class="icon icon-triangle-bottom"></i>
+                    </span>
+                    <span class="app" id="J-wap">
+                        <a href="http://www.yaochufa.com/app/" target="_blank">
+                            <i class="icon icon-app"></i>
+                            <em>移动触屏版</em>
+                        </a>
+                        <img src="images/photo-app.png" alt="扫描进去手机版">
+                    </span>
+                </div>
+                <!-- 省份列表 -->
+                <table class="province-list" id="J-province-list">
+                    <tr>
+                        <th>华南地区</th>
+                        <td>
+                            <span id="GuangDong">广东</span>
+                            <span id="HaiNan">海南</span>
+                            <span id="FuJian">福建</span>
+                            <span id="JiangXi">江西</span>
+                            <span id="GuangXiZhuangZu">广西</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>华东地区</th>
+                        <td>
+                            <span id="ShangHai">上海</span>
+                            <span id="ZheJiang">浙江</span>
+                            <span id="JiangSu">江苏</span>
+                            <span id="AnHui">安徽</span>
+                            <span id="ShanDong">山东</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>华北地区</th>
+                        <td>
+                            <span id="BeiJing">北京</span>
+                            <span id="TianJin">天津</span>
+                            <span id="HeBei">河北</span>
+                            <span id="ShanXi">山西</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>西南地区</th>
+                        <td>
+                            <span id="SiChuan">四川</span>
+                            <span id="ZhongQing">重庆</span>
+                            <span id="YunNan">云南</span>
+                            <span id="GuiZhou">贵州</span>
+                            <span id="XiCang">西藏</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>西北地区</th>
+                        <td>
+                            <span id="ShanXiSheng">陕西</span>
+                            <span id="GanSu">甘肃</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>东北地区</th>
+                        <td>
+                            <span id="JiLin">吉林</span>
+                            <span id="LiaoNing">辽宁</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>华中地区</th>
+                        <td>
+                            <span id="HuNan">湖南</span>
+                            <span id="HuBei">湖北</span>
+                            <span id="HeNan">河南</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>港澳台</th>
+                        <td>
+                            <span id="XiangGang">香港</span>
+                            <span id="AoMen">澳门</span>
+                            <span id="TaiWan">台湾</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="last">*提示：根据你选择的省份，我们将为你切换至该地区的首页</td>
+                    </tr>
+                </table>
+                <!-- 最近浏览 -->
+                <ul class="viewed-list" id="J-viewed-list">
+                    <li class="loading">
+                        <img src="images/loading.gif" alt="加载中...">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 头部Logo与搜索框 -->
+        <div class="wrapper clearfix top-main">
+            <!-- Logo -->
+            <a href="http://www.yaochufa.com" class="logo">
+                <img src="images/logo.png" alt="要出发精选周边游">
+            </a>
+            <!-- 搜索框 -->
+            <form class="search" id="J-search">
+                <i class="icon icon-search"></i>
+                <input type="text" value="目的地，酒店，景点关键字" class="search-box focus-input" id="J-search-box">
+                <input type="submit" value="搜索" class="search-submit" data-site="http://www.yaochufa.com" data-search="http://s.yaochufa.com">
+            </form>
+            <!-- 用户订单信息 -->
+            <div class="user-info" id="J-user-info">
+                <div class="user-info-btn ovh">
+                    <a href="http://www.yaochufa.com/usercenter/index" target="_blank" class="my-ycf"><i class="icon icon-user"></i>我的要出发</a>
+                    <a href="http://www.yaochufa.com/usercenter/ordersearch" target="_blank" class="my-order"><i class="icon icon-order"></i><span>订单查询</span></a>
+                </div>
+                <ul class="ovh">
+                    <li><a href="http://www.yaochufa.com/usercenter/orderlist?type=2" target="_blank">未付款订单<span></span></a></li>
+                    <li><a href="http://www.yaochufa.com/usercenter/orderlist?type=1" target="_blank">已付款订单<span></span></a></li>
+                    <li><a href="http://www.yaochufa.com/usercenter/coupons" target="_blank">我的现金券<span></span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 导航 -->
+        <div class="wrapper menu clearfix">
+            <!-- 左边导航列表 -->
+            <div class="side-menu">
+                <h2 class="menu-title">周边游推荐</h2>
+            </div>
+            <!-- 主导航 -->
+            <div class="main-menu ovh" id="J-main-manu">
+                <ul class="ovh">
+                    <li><a href="http://www.yaochufa.com/">首页</a></li>
+                    <li><a href="http://www.yaochufa.com/neworder">每周新品</a></li>
+                    <li class="active"><a href="http://you.yaochufa.com/funny" id="you-link">好去处</a></li>
+                    <li><a href="http://www.yaochufa.com/tuan">团购预约</a></li>
+                    <li><a href="http://www.yaochufa.com/app">手机版下载</a></li>
+                </ul>
+                <span class="slider-border" id="J-slider-border"></span>
+            </div>
+        </div>
+    </div>	<!-- 主体 -->
+	<div class="container">
+    	<!-- 面包屑导航 -->
+    	<ul class="bread-crumbs">
+            <li><a href="http://www.yaochufa.com">首页</a>&gt;</li>
+            <li class="active"><a href="/funny">好去处</a></li>
+        </ul>
+        <div class="fl content">
+            <div class="place">
+                <div class="place-title ovh">
+                    <h2>好去处</h2>
+                    <ul class="province">
+                                            <li class="active"><a href="/funny/n">全国</a></li>
+                                        </ul>
+                    <ul class="filter">
+                        <li  class="active"><a href="/funny/n_h">推荐</a></li>
+                        <li  ><a href="/funny/n_n"">最新</a></li>
+                    </ul>
+                </div>
+                <div class="place-list">
+                                                    <a href="/funny/v_2288" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com/////////////group1/M00/02/D0/oYYBAFd_fMmAbUSYAAKLU5IEhLo552.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="带娃玩转长隆奇妙飞鸟王国">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>广州 | 带娃玩转长隆奇妙飞鸟王国</h3>
+                            <p><em>[亲近自然]</em>广州长隆飞鸟乐园（原长隆集团广州鳄鱼公园），隶属长隆旅游度假区，地处广州番禺，占地数千亩，是集鸟类观赏、科普教育、各...</p>
+                            <ul>
+                                <li>地址：广州市番禺大石镇石北大道长隆飞鸟公园</li>                                <li>时间：1~2天</li>                            </ul>
+                        </div>
+                                            </a>
+                                    <a href="/funny/v_2285" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com//group1/M00/01/F9/oYYBAFdHzmeAX23iAAPXM9ClkaM138.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="史上最全长隆水上乐园攻略">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>                                广东 | 史上最全长隆水上乐园攻略</h3>
+                            <p><em>[玩点]</em>广州的五月已经悄悄开启夏日模式，不想终日躲在空调房，想不想来一场刺激的水上世界之旅，感受释放和清凉？宝宝我已经抢占长...</p>
+                            <ul>
+                                <li>地址：广东省广州市番禺区番禺大道</li>                                <li>时间：09:30-21:00</li>                            </ul>
+                        </div>
+                                            </a>
+                                    <a href="/funny/v_2279" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com/uploads/201512/567a3dcf47876.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="出发啦！梦幻海洋王国大冒险！">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>珠海 | 出发啦！梦幻海洋王国大冒险！</h3>
+                            <p><em>[演出]</em>地点：珠海长隆海洋王国  
+
+
+	游玩路线：海豚湾→5D城
+堡影院→雨林飞翔→横琴海→海洋奇观→极地探险 
+
+
+	 体验指数：★★...</p>
+                            <ul>
+                                <li>地址：广东省珠海市横琴新区富祥湾珠海长隆度假区内</li>                                <li>时间：海洋王国跨年倒数开放时间：12月31日16:00-次日00:30。
+海洋王国开放时间：周日至周四 10:00-20:30，周五至...</li>                            </ul>
+                        </div>
+                                            </a>
+                                    <a href="/funny/v_2245" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com/uploads/201509/55e69d498485f.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="香港海洋公园全攻略，第一次去必看">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>深圳 | 香港海洋公园全攻略，第一次去必看</h3>
+                            <p><em>[主题活动]</em>香港海洋公园可大了，要想一天逛完还是有些许难度！贴心的小编早已准备好了超详细的攻略，教你一天玩转最精华项目！
+ 
+
+
+	
+...</p>
+                            <ul>
+                                <li>地址：香港香港仔黄竹坑南朗山（近集古村）</li>                                <li>时间：平时10:30-18:30、周末10:00-19:00</li>                            </ul>
+                        </div>
+                                                <div class="writer">
+                            <strong><img src="" data-original="http://cdn6.jinxidao.com/uploads/201502/54d3191d2a6d3.png?imageView2/1/w/60/h/60/q/100" class="lazy-load" alt="头像"></strong>
+                            <span>by<i>熊大大</i></span>
+                            <em>2015-09-01</em>
+                        </div>
+                                            </a>
+                                    <a href="/funny/v_2254" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com/uploads/201509/55ec162348d9d.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="国庆游宝典①第一次去云南怎么玩？">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>广州 | 国庆游宝典①第一次去云南怎么玩？</h3>
+                            <p><em>[亲近自然]</em>期待已久的国庆大大长假即将驾到，小编表示开心得梦中都要笑醒！还没有计划好要去哪的小伙伴要速度啦，不然好的酒店客栈都满...</p>
+                            <ul>
+                                <li>地址：云南</li>                                                            </ul>
+                        </div>
+                                                <div class="writer">
+                            <strong><img src="" data-original="http://cdn6.jinxidao.com/uploads/201502/54d3191d2a6d3.png?imageView2/1/w/60/h/60/q/100" class="lazy-load" alt="头像"></strong>
+                            <span>by<i>熊大大</i></span>
+                            <em>2015-09-06</em>
+                        </div>
+                                            </a>
+                                    <a href="/funny/v_2191" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com/uploads/201508/55cd9b8e4ff29.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="东部华侨城超全攻略，去之前必看">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>深圳 | 东部华侨城超全攻略，去之前必看</h3>
+                            <p><em>[主题活动]</em>东部华侨城好玩的太多太多，究竟哪些最值得玩？这份攻略，出行前一定要看!
+
+
+	 
+
+
+	
+
+
+	 
+
+ 
+
+	游玩篇：华侨城大侠谷 
+
+ 
+
+	...</p>
+                            <ul>
+                                <li>地址：深圳盐田区大梅沙东部华侨城</li>                                                            </ul>
+                        </div>
+                                                <div class="writer">
+                            <strong><img src="" data-original="http://cdn6.jinxidao.com/uploads/201502/54d319099c40e.png?imageView2/1/w/60/h/60/q/100" class="lazy-load" alt="头像"></strong>
+                            <span>by<i>林林</i></span>
+                            <em>2015-08-14</em>
+                        </div>
+                                            </a>
+                                    <a href="/funny/v_2220" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com/uploads/201508/55d6ee697ac4a.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="安徽初秋去哪玩儿——登山篇">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>合肥 | 安徽初秋去哪玩儿——登山篇</h3>
+                            <p><em>[亲近自然]</em>今天是三伏天的最后一天，从明天起，酷暑将离我们越来越远，小编想想还真有点小激动呢！ 
+
+
+	初秋风光无限好，尤其在高处。...</p>
+                            <ul>
+                                <li>地址：安徽省合肥市</li>                                                            </ul>
+                        </div>
+                                                <div class="writer">
+                            <strong><img src="" data-original="http://cdn6.jinxidao.com/uploads/201507/55a3811bf0714.jpg?imageView2/1/w/60/h/60/q/100" class="lazy-load" alt="头像"></strong>
+                            <span>by<i>风风</i></span>
+                            <em>2015-08-21</em>
+                        </div>
+                                            </a>
+                                    <a href="/funny/v_1519" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com/uploads/201505/554b19c5f01ca.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="南海这条古村竟上了央视？">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>佛山 | 南海这条古村竟上了央视？</h3>
+                            <p><em>[人文]</em>南海松塘翰林古村上央视
+央视记录片《记住乡愁·松塘篇》，揭秘了这个书香古村的神秘魅力。
+
+
+家有两斗糠，供儿上学堂
+松塘...</p>
+                            <ul>
+                                <li>地址：佛山市南海区西樵镇翰林松塘村</li>                                <li>时间：全年开放</li>                            </ul>
+                        </div>
+                                                <div class="writer">
+                            <strong><img src="" data-original="http://cdn6.jinxidao.com/uploads/201502/54d319099c40e.png?imageView2/1/w/60/h/60/q/100" class="lazy-load" alt="头像"></strong>
+                            <span>by<i>林林</i></span>
+                            <em>2015-05-07</em>
+                        </div>
+                                            </a>
+                                    <a href="/funny/v_1498" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com/uploads/201505/5549c112478bf.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="遛娃好去处！广东省首个健康体验馆">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>佛山 | 遛娃好去处！广东省首个健康体验馆</h3>
+                            <p><em>[科普]</em>广东省首个健康体验馆 
+
+
+	对于小朋友来说，身体藏着很多奥秘。而这有点抽象的秘密，在这里小朋友可以通过直观有趣的方式了...</p>
+                            <ul>
+                                <li>地址：佛山市南海区狮山镇中心城区博爱路</li>                                <li>时间：星期二至日开放，逢星期一闭馆
+</li>                            </ul>
+                        </div>
+                                                <div class="writer">
+                            <strong><img src="" data-original="http://cdn6.jinxidao.com/uploads/201502/54d319099c40e.png?imageView2/1/w/60/h/60/q/100" class="lazy-load" alt="头像"></strong>
+                            <span>by<i>林林</i></span>
+                            <em>2015-05-06</em>
+                        </div>
+                                            </a>
+                                    <a href="/funny/v_1504" target="_blank" class="pl-mod">
+                        <div class="img">
+                            <img src="" data-original="http://cdn6.jinxidao.com/uploads/201505/5549dc3cb1712.jpg?imageView2/1/w/216/h/160/q/100" class="lazy-load" alt="6月未到，亚艺公园荷花已经开啦">
+                            <span>推荐</span>                        	                        </div>
+                        <div class="intro">
+                            <h3>佛山 | 6月未到，亚艺公园荷花已经开啦</h3>
+                            <p><em>[亲近自然]</em>还没到6月，亚艺公园的荷花已经初露尖尖角啦，零星几朵迫不及待开放了，来看看通济网友平头最近拍的图片~
+
+
+	 
+
+
+	
+
+
+	超酷...</p>
+                            <ul>
+                                <li>地址：佛山市禅城区文化中路段 亚洲艺术公园 </li>                                <li>时间：全年开放</li>                            </ul>
+                        </div>
+                                                <div class="writer">
+                            <strong><img src="" data-original="http://cdn6.jinxidao.com/uploads/201501/54af45f120e8e.png?imageView2/1/w/60/h/60/q/100" class="lazy-load" alt="头像"></strong>
+                            <span>by<i>小雪</i></span>
+                            <em>2015-05-06</em>
+                        </div>
+                                            </a>
+                                                </div>
+            </div>
+            <!-- 分页器 -->
+            <div class="pagination">
+                <a class='now_page'>1</a>
+<a href="/funny/n_h_2">2</a>
+
+<a href="/funny/n_h_3">3</a>
+
+<a href="/funny/n_h_4">4</a>
+
+<a href="/funny/n_h_5">5</a>
+
+<a href="/funny/n_h_6">6</a>
+
+<a href="/funny/n_h_7">7</a>
+
+<a href="/funny/n_h_2">下一页</a>
+<a href="/funny/n_h_147">最后一页</a>
+            </div>
+        </div>
+        <div class="fr sidebar">
+            <!-- 关注要出发 -->
+            <div class="side-mod follow-ycf">
+                <span>原创微攻略</span>
+                <span>旅行灵感库</span>
+                <span>超值随心游</span>
+                <span>周末去哪不用愁</span>
+                <span>立即关注“要出发”</span>
+            </div>
+            <!-- 热门好去处 -->
+                        <div class="side-mod hot-place">
+                <h2>热门好去处</h2>
+                <ul>
+                                    <li>
+                        <a href="/funny/v_2245" target="_blank">
+                            <img src="images/55e69d498485f.jpg" alt="香港海洋公园全攻略，第一次去必看">
+                            <p>
+                                <strong>香港海洋公园全攻略，第一次去必看</strong>
+                                <span>
+                                    <i class="icon icon-views"></i><em>100983</em>
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                                     <li>
+                        <a href="/funny/v_961" target="_blank">
+                            <img src="images/550bdd70203af.jpg" alt="深圳有一个百年甘坑客家小镇">
+                            <p>
+                                <strong>深圳有一个百年甘坑客家小镇</strong>
+                                <span>
+                                    <i class="icon icon-views"></i><em>110520</em>
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                                     <li>
+                        <a href="/funny/v_2191" target="_blank">
+                            <img src="images/55cd9b8e4ff29.jpg" alt="东部华侨城超全攻略，去之前必看">
+                            <p>
+                                <strong>东部华侨城超全攻略，去之前必看</strong>
+                                <span>
+                                    <i class="icon icon-views"></i><em>99000</em>
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                                     <li>
+                        <a href="/funny/v_1454" target="_blank">
+                            <img src="images/5547395a10823.jpg" alt="遛娃好去处！广州很赞的儿童游乐园">
+                            <p>
+                                <strong>遛娃好去处！广州很赞的儿童游乐园</strong>
+                                <span>
+                                    <i class="icon icon-views"></i><em>45042</em>
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                                     <li>
+                        <a href="/funny/v_937" target="_blank">
+                            <img src="images/550a47fbc1b8a.jpg" alt="东莞有个这么美的地方你知道吗">
+                            <p>
+                                <strong>东莞有个这么美的地方你知道吗</strong>
+                                <span>
+                                    <i class="icon icon-views"></i><em>72569</em>
+                                </span>
+                            </p>
+                        </a>
+                    </li>
+                                 </ul>
+            </div>
+                        <!-- 热门城市旅游攻略 -->
+                        <div class="side-mod travel-guide">
+                <h2>热门城市旅游攻略</h2>
+                <ul class="ovh">
+                                    <li><a href="/hulunbeier" target="_blank">呼伦贝尔</a></li>
+                                    <li><a href="/alashanmeng" target="_blank">阿拉善</a></li>
+                                    <li><a href="/xinganmeng" target="_blank">兴安盟</a></li>
+                                    <li><a href="/chifeng" target="_blank">赤峰</a></li>
+                                    <li><a href="/huhehaote" target="_blank">呼和浩特</a></li>
+                                    <li><a href="/eerduosi" target="_blank">鄂尔多斯</a></li>
+                                    <li><a href="/xilinguolemeng" target="_blank">锡林郭勒</a></li>
+                                    <li><a href="/wulanchabu" target="_blank">乌兰察布</a></li>
+                                    <li><a href="/tongliao" target="_blank">通辽</a></li>
+                                </ul>
+            </div>
+                    </div>
+    </div>
+    <!-- 公用底部模块 -->
+	<!-- 右侧固定导航栏 -->
+    <ul class="fixed-navbar">
+        <li class="download-app">
+            <a href="#" target="_blank">
+                <i>扫二维码</i>
+                <div>
+                    <strong>下载要出发APP</strong>
+                    <img src="images/appcode.png">
+                </div>
+            </a>
+        </li>
+        <li class="service-tel">
+            <a href="#" target="_blank">
+                <i>客服电话</i>
+                <div>
+                    <span>24小时客服电话</span>
+                    <em>400-118-1166</em>
+                </div>
+            </a>
+        </li>
+        <li class="weixin">
+            <a href="#" target="_blank">
+                <i>关注微信</i>
+                <div>
+                    <strong>关注微信公众号</strong>
+                    <img src="images/weixin_code.png">
+                </div>
+            </a>
+        </li>
+        <li class="backto-top">
+            <a href="#" target="_blank">
+                <i>返回顶部</i>
+            </a>
+        </li>
+    </ul>
+    <!-- 公用底部模块 -->
+    <div class="footer">
+        <div class="wrapper">
+            <!-- 底部导航 -->
+            <dl class="first">
+                <dt>关于要出发</dt>
+                <dd><a href="http://about.yaochufa.com/Team" target="_blank">团队介绍</a></dd>
+                <dd><a href="http://job.yaochufa.com/" target="_blank">招聘信息</a></dd>
+                <dd><a href="http://about.yaochufa.com/ycf_news" target="_blank">新闻动态</a></dd>
+            </dl>
+            <dl>
+                <dt>帮助中心</dt>
+                <dd><a href="http://about.yaochufa.com/help_faq" target="_blank">常见问题</a></dd>
+                <dd><a href="http://about.yaochufa.com/help_jifen" target="_blank">积分规则</a></dd>
+                <dd><a href="http://about.yaochufa.com/help_xianjinquan" target="_blank">现金券规则</a></dd>
+                <dd><a href="http://about.yaochufa.com/help_yuding" target="_blank">预订说明</a></dd>
+                <dd><a href="http://about.yaochufa.com/help_tuangou" target="_blank">团购预约</a></dd>
+                <dd><a href="http://about.yaochufa.com/Pay" target="_blank">支付说明</a></dd>
+            </dl>
+            <dl>
+                <dt>客户服务</dt>
+                <dd><a href="http://about.yaochufa.com/service" target="_blank">品质承诺</a></dd>
+                <dd><a href="javascript:;">客服及投诉电话</a><strong>&nbsp;400-118-1166  / 020-62312938</strong></dd>
+                <dd><a href="http://www.yaochufa.com/tuan" target="_blank">自助预约</a></dd>
+                <dd><a href="http://about.yaochufa.com/contact" target="_blank">联系我们</a></dd>
+                <dd>广州市政务服务热线&nbsp;<strong>12345</strong></dd>
+            </dl>
+            <!-- 二维码 -->
+            <ul class="qr-code">
+                <li><a href="http://www.yaochufa.com/app/" target="_blank"><img src="images/appcode.png?v=3" alt="APP下载"></a>APP下载</li>
+                <li><img src="images/weixin_code.png" alt="微信公众号">微信公众号</li>
+            </ul>
+            <!-- 友情链接 -->
+                        <!-- 网站认证 -->
+            <div class="web-trust">
+                <a href="javascript:;" rel="nofollow">
+                    <img src="images/alipay.png" alt="支付宝特约商家">
+                </a>
+                <a href="http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?logo=440106106012011101200878" target="_blank" rel="nofollow">
+                    <img src="images/zhizhao.jpg" alt="要出发营业执照">
+                </a>
+                <a href="https://search.szfw.org/cert/l/CX20140912005110005176" target="_blank" rel="nofollow">
+                    <img src="images/chengxin.jpg" alt="诚信网站">
+                </a>
+                <a href="https://ss.knet.cn/verifyseal.dll?sn=e1409174401005395210ye000000" target="_blank" rel="nofollow">
+                    <img src="images/kexin.jpg" alt="可信网站省份验证">
+                </a>
+                <a href="http://www.anquan.org/authenticate/cert/?site=www.yaochufa.com&at=business" key="55027098c274e77b9dc448b6" logo_size="124x47" logo_type="business" rel="nofollow" class="anquan">
+                	<!--<script src="js/aq_auth.js"></script>--><img src="images/hy_124x47.png" alt="安全联盟" style="display: none">
+                </a>
+            </div>
+            <ul class="license">
+                <li><a href="http://cdn1.jinxidao.com/images/about/Telecom_ICP.jpg" target="_blank">中华人民共和国增值电信业务经营许可证 经营许可证编号：粤B2-20130613</a></li>
+                <li><a href="http://cdn7.jinxidao.com/images/license.jpg" target="_blank">旅行社业务经营许可证编号：L-GD01685</a></li>
+                <li><a href="http://www.miitbeian.gov.cn/" target="_blank">版权所有 &copy; 广州酷旅旅行社有限公司 2009-2016 粤ICP备11008339号</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--[if IE 6]>
+    <script src="js/clarity-png.js"></script>
+    <script>
+        DD_belatedPNG.fix('.logo img, .app img,.slideshow .prev, .slideshow .next, .around-tour .sm-left div, .choice-tour .sm-left div, .choice-tour .sm-left p, .footer-links i, .icon, .no-data img, .showmap, .price');
+    </script>
+    <![endif]-->
+    <script src="js/jquery.js"></script>
+    <script src="js/lazyload.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        sessionId = "";
+        clientIp = "1.180.237.255";
+        userId = "";
+        cityCode = "";
+        logUrl = "http://tj.yaochufa.com/";
+    </script>
+    <script src="js/user_analytics_pc.js"></script>    <script src="js/fun-place.js"></script>
+    <script>
+        $(function() {
+            var urlVcount = 'http://apiphp.yaochufa.com/playpoint/ViewCount';
+            $.ajax({
+                url: urlVcount,
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    productId: 0,
+                    uid: '0',
+                    url: '0',
+                    ip:'1.180.237.255',
+                    user_id: '0',
+                    cookies:'57c377c44c815'                },
+                success: function(data) {
+                }
+            });
+        });
+   </script>
+</body>
+</html>

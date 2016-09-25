@@ -1,0 +1,292 @@
+﻿body {
+    overflow-y:scroll
+}
+.tuan ul,.tuanbook .tuan-list {
+    overflow:hidden;
+    zoom:1
+}
+.tuan {
+    background:#fff;
+    padding:40px 0 40px 100px
+}
+.tuan h2 {
+    font-size:26px;
+    color:#333;
+    margin-bottom:20px
+}
+.tuan li {
+    float:left;
+    margin:15px;
+    background:url(../images/tuan-icon.png) no-repeat
+}
+.tuan li a {
+    display:block;
+    width:169px;
+    height:104px;
+    border-radius:4px;
+    text-indent:-9999px;
+    border:1px solid #ddd
+}
+.tuan li a:hover {
+    border:1px solid #ff7800
+}
+.tuan .meituan {
+    background-position:2px 0
+}
+.tuan .dazhongtuan {
+    background-position:0 -128px
+}
+.tuan .mafengwo {
+    background-position:0 -256px
+}
+.tuan .qunartuan {
+    background-position:0 -384px
+}
+.tuan .elong {
+    background-position:0 -512px
+}
+.tuan .nuomi {
+    background-position:0 -640px
+}
+.tuan .jingdong {
+    background-position:0 -768px
+}
+.tuan .taolushan {
+    background-position:0 -2301px
+}
+.tuan .qunaerhotel {
+    background-position:0 -896px
+}
+.tuan .lashou {
+    background-position:0 -1024px
+}
+.tuan .juhuasuan {
+    background-position:0 -1152px
+}
+.tuan .ctrip {
+    background-position:0 -1280px
+}
+.tuan .tmall {
+    background-position:-5px -1408px
+}
+.tuan .wowotuan {
+    background-position:0 -1536px
+}
+.tuan .yihaodian {
+    background-position:0 -1664px
+}
+.tuan .tongcheng {
+    background-position:0 -1792px
+}
+.tuan .baidu {
+    background-position:0 -1920px
+}
+.tuan .liketuan {
+    background-position:0 -2048px
+}
+.tuan .tuniu {
+    background-position:0 -2176px
+}
+.tuanbook {
+    background:#fff;
+    padding:0 40px 40px;
+    color:#666
+}
+.tuanbook h2 {
+    font-size:20px;
+    color:#333;
+    border-bottom:1px dotted #ddd;
+    padding:40px 0 18px
+}
+.tuanbook h3 {
+    font-size:16px;
+    padding:20px 0 10px
+}
+.tuanbook h3 strong {
+    cursor:pointer;
+    background:#fff
+}
+.tuanbook h3 span {
+    color:#ff7800;
+    margin-left:10px
+}
+.tuanbook h3 .icon {
+    margin-left:5px;
+    top:-1px
+}
+.tuanbook .tuan-list {
+    border-top:1px dotted #ddd;
+    border-left:1px dotted #ddd;
+    text-align:center;
+    width:456px;
+    margin-bottom:22px
+}
+.tuanbook .tuan-list li {
+    float:left;
+    width:90px;
+    height:32px;
+    line-height:32px;
+    border:1px dotted #ddd;
+    border-top:none;
+    border-left:none;
+    cursor:pointer
+}
+.tuanbook .tuan-list .active,.tuanbook .tuan-list li:hover {
+    background:#ff7800;
+    color:#fff
+}
+.tuanbook .tuan-search-way {
+    overflow:hidden;
+    zoom:1;
+    color:#333;
+    padding-top:10px
+}
+.tuanbook .tuan-search-way li {
+    float:left;
+    cursor:pointer;
+    padding:3px 5px;
+    margin-right:10px;
+    border-radius:2px;
+    display:none
+}
+.tuanbook .tuan-search-way li i {
+    padding:0 20px;
+    color:#999;
+    cursor:default
+}
+.tuanbook .tuan-search-way .active,.tuanbook .tuan-search-way li:hover {
+    color:#fff;
+    background:#fda34b
+}
+.tuanbook .tuan-search {
+    height:34px;
+    line-height:34px;
+    padding:15px 0 5px;
+    position:relative
+}
+.tuanbook .tuan-search * {
+    float:left
+}
+.tuanbook .tuan-search input {
+    height:32px;
+    line-height:32px;
+    border:1px solid #ddd;
+    border-right:none;
+    width:320px;
+    padding:0 5px;
+    color:#666;
+    background:#fff;
+    font-size:13px;
+    border-radius:2px 0 0 2px;
+    outline:0
+}
+.tuanbook .tuan-search button {
+    height:34px;
+    line-height:34px;
+    border:none;
+    background:#ff7800;
+    color:#fff;
+    text-align:center;
+    width:72px;
+    border-radius:0 2px 2px 0;
+    cursor:pointer;
+    outline:0
+}
+.tuanbook .tuan-search .error-tips {
+    margin-left:15px;
+    color:red
+}
+.tuanbook .tuan-search .quan-num {
+    position:absolute;
+    height:34px;
+    line-height:34px;
+    width:321px;
+    left:0;
+    bottom:-28px;
+    background:#ff7800;
+    padding:0 5px;
+    color:#fff;
+    display:none
+}
+.tuanbook .tuan-search-result tbody tr:hover,.tuanbook .tuan-search-result thead {
+    background:#f4f4f4
+}
+.tuanbook .tuan-search-tips {
+    color:#999;
+    font-size:12px;
+    line-height:1.9;
+    padding-top:8px
+}
+.tuanbook .tuan-search-before {
+    color:#525252;
+    font-size:18px;
+    padding:60px 0;
+    text-align:center;
+    display:none
+}
+.tuanbook .tuan-search-before em {
+    color:#ff7800;
+    margin:0 6px
+}
+.tuanbook .tuan-search-content {
+    color:#333;
+    margin-top:20px
+}
+.tuanbook .tuan-search-content h4 {
+    color:#333;
+    border-top:1px dotted #ddd;
+    padding:20px 0
+}
+.tuanbook .tuan-search-content h4 span {
+    color:#ff7800;
+    margin:0 3px
+}
+.tuanbook .tuan-search-result table {
+    font-size:13px
+}
+.tuanbook .tuan-search-result tbody tr {
+    cursor:pointer
+}
+.tuanbook .tuan-search-result td,.tuanbook .tuan-search-result th {
+    vertical-align:middle;
+    text-align:center;
+    padding:12px 0
+}
+.tuanbook .tuan-search-result td {
+    border-bottom:1px dotted #ddd
+}
+.tuanbook .tuan-search-result .id {
+    width:140px
+}
+.tuanbook .tuan-search-result .price {
+    width:180px
+}
+.tuanbook .tuan-search-result .name {
+    width:498px;
+    text-align:left;
+    padding-left:40px
+}
+.tuanbook .tuan-search-result .city,.tuanbook .tuan-search-result .link {
+    width:180px
+}
+.tuanbook .tuan-search-result .ori-link:hover {
+    color:#ff7800;
+    text-decoration:underline
+}
+.tuanbook .tuan-search-nodata {
+    text-align:center;
+    padding:30px 0 50px
+}
+.tuanbook .tuan-search-nodata strong {
+    display:block;
+    font-size:16px;
+    padding:0 0 15px
+}
+.tuanbook .tuan-search-nodata span {
+    display:block;
+    font-size:16px;
+    padding:5px 0 0
+}
+.tuanbook .tuan-search-nodata em {
+    color:#999
+}

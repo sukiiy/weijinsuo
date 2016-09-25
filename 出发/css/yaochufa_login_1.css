@@ -1,0 +1,1534 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*-------------------------css reset---------------------------------------------*/
+/* 头部重写
+.top-menu ul,.site-nav-bd {
+	width:1000px
+}
+.head {
+	width:1000px;
+	margin:10px auto;
+}
+.wrap {
+	width:1000px;
+	margin:12px auto 0;
+	position:relative;
+}
+*/
+
+body {
+    background:#f2f2f2;
+    font-family:"Microsoft YaHei","\5FAE\8F6F\96C5\9ED1";
+    min-width:1200px
+}
+.order_content {
+    width:961px;
+    float:left;
+    padding-bottom:20px;
+    position:relative;
+}
+.out_login {
+    position:absolute;
+    right:30px;
+    top:20px;
+}
+.order_content h2 {
+    font-size:20px;
+    color:#4a3c27;
+    font-weight:normal;
+    line-height:60px;
+    padding-left:32px;
+}
+.order_content h2 span {
+    color:#bebdbd;
+    font-size:16px;
+    font-weight:normal;
+    padding-left:5px;
+}
+.order_detail {
+    width:789px;
+    margin:10px 107px;
+    float:left;
+    display:inline;
+}
+.red_content {
+    width:789px;
+    float:left;
+}
+.client_login {
+    width:800px;
+    margin:0px auto 0px auto;
+}
+.login_client {
+    width:820px;
+    float:left;
+    padding:50px 0px 80px 0px;
+}
+.client_login h4 {
+    text-align:center;
+    font-size:18px;
+    line-height:30px;
+    color:#b0b0b0;
+    font-weight:normal;
+}
+.login_sd {
+    color:#5d5b59;
+    font-size:20px;
+    float:left;
+    width:600px;
+    padding-top:50px;
+}
+.login_sd p {
+    float:left;
+    margin-bottom:10px;
+    width:800px;
+}
+.login_sd p span {
+    float:left;
+    height:45px;
+    line-height:35px;
+    margin-right:5px;
+}
+.login_sd p span.ms_text {
+    width:200px;
+    font-size:12px;
+    font-family:"SimHei","\9ED1\4F53";
+}
+.login_sd p .name {
+    font-size:13px;
+    color:#676665;
+    width:120px;
+    text-align:right;
+}
+.login_sd_text {
+    background:url(../images/bg-new_input.gif) no-repeat 0px -85px;
+    width:338px;
+    height:45px;
+    line-height:45px\9;
+    padding:0px 10px;
+    border:0px;
+    font-size:22px;
+    color:#636363;
+    float:left;
+    outline:none;
+}
+.login_sd_texthover {
+    background:url(../images/bg-new_input.gif) no-repeat 0px 0px;
+    width:338px;
+    height:45px;
+    line-height:45px;
+    padding:0px 10px;
+    border:0px;
+    font-size:25px;
+    color:#636363;
+    outline:none;
+}
+.login_sd_inputred {
+    background:url(../images/bg-new_input.gif) no-repeat 0px -168px;
+    width:338px;
+    height:45px;
+    line-height:45px;
+    padding:0px 10px;
+    border:0px;
+    font-size:25px;
+    color:#636363;
+    outline:none;
+}
+.find_password span {
+    display:block;
+}
+.login_sd p span#labMsg {
+    font-size:16px;
+    color:red;
+    position:absolute;
+    left:210px;
+    top:100px;
+}
+#lbPhoneMsg {
+    font-size:12px;
+    color:red;
+    padding-left:125px;
+    float:left;
+}
+#lbMsg {
+    font-size:12px;
+    color:red;
+    position:absolute;
+    left:210px;
+    top:262px;
+}
+.find_password {
+    color:#5d5b59;
+    font-size:20px;
+    float:left;
+    width:720px;
+    padding-top:10px;
+}
+.find_password p {
+    float:left;
+    padding:8px 0;
+    width:700px;
+    position:relative;
+}
+.find_password p span {
+    float:left;
+    margin-right:5px;
+    width:520px;
+}
+.find_password p .name {
+    font-size:13px;
+    line-height:31px;
+    color:#676665;
+    width:120px;
+    display:block;
+    text-align:right;
+    float:left;
+}
+.find_password p span a {
+    float:left;
+    padding:13px 10px;
+}
+.find_password p.phone_send {
+    font-size:12px;
+    font-family:"SimHei","\9ED1\4F53";
+    color:#797979;
+    padding-left:130px;
+}
+.find_password p.phone_send a,.find_password p.phone_send a:hover {
+    color:#6d9031;
+}
+.order_input {
+    padding-left:127px;
+    float:left;
+    margin-top:10px;
+}
+.order_input span {
+    margin-right:20px;
+    float:left;
+}
+.client_input {
+    width:300px;
+    float:left;
+    padding-left:50px;
+    margin-top:15px;
+}
+.client_pnputd {
+    width:123px;
+    height:49px;
+    background:url(../images/login_client.gif) no-repeat;
+    border:0px;
+    cursor:pointer;
+}
+.client_pnputd.reg {
+    width:180px;
+    height:49px;
+    background-image:url(../images/login_imgs.png);
+    background-repeat:no-repeat;
+    border:0px;
+    cursor:pointer;
+    background-position:-2px -382px;
+}
+.client_input span {
+    float:left;
+    padding-left:12px;
+    margin-left:10px;
+}
+.client_findpassword {
+    width:107px;
+    height:48px;
+    background:url(../images/ico_find_password_ok.gif) no-repeat;
+    border:0px;
+    cursor:pointer;
+}
+.find_password p span i {
+    font-size:12px;
+    font-style:normal;
+    color:#628a14;
+}
+.find_password p i.wong_phone {
+    font-size:12px;
+    font-style:normal;
+    color:#628a14;
+    position:absolute;
+    left:130px;
+    top:-20px;
+}
+.forgetpassword a,.forgetpassword a:hover {
+    color:#c17c1a;
+}
+.go_registration {
+    font-size:14px;
+    color:#676665;
+    letter-spacing:1px;
+}
+.go_registration a,.go_registration a:hover {
+    color:#17b0f6;
+    font-size:14px;
+}
+.login_boototm {
+    width:961px;
+    float:left;
+    height:80px;
+    display:none;
+}
+.login_right {
+    float:left;
+    width:200px;
+    margin:60px 0px 60px 0px;
+    padding:20px 0px 20px 60px;
+    float:left;
+    border-left:1px solid #f1f1f1;
+}
+.login_right h5 {
+    font-size:12px;
+    font-weight:normal;
+    color:#585858;
+}
+.login_other a,login_other a:hover {
+    background-image:url(../images/login_other.gif);
+    background-repeat:no-repeat;
+}
+.login_other p {
+    float:left;
+    margin:10px 0px;
+}
+.login_other a.sina_login,login_other a.sina_login:hover {
+    background-position:0px 0px;
+    width:126px;
+    height:24px;
+    display:block;
+}
+.login_other a.qq_login,login_other a.qq_login:hover {
+    background-position:-1px -35px;
+    width:126px;
+    height:24px;
+    display:block;
+}
+.login_other a.kaixin_login,login_other a.kaixin_login:hover {
+    background-position:0px -66px;
+    width:128px;
+    height:24px;
+    display:block;
+}
+.login_other a.renren_login,login_other a.renren_login:hover {
+    background-position:0px -98px;
+    width:128px;
+    height:25px;
+    display:block;
+}
+.whitelist {
+    width:930px;
+    float:left;
+    padding-left:32px;
+}
+.whitelist_left {
+    width:123px;
+    float:left;
+}
+.whitelist_left li a {
+    background-image:url(../images/ico-nav-email.png);
+    background-repeat:no-repeat;
+    width:122px;
+    height:37px;
+    display:block;
+    margin-bottom:9px;
+}
+.whitelist_left li a.wy163 {
+    background-position:0px 0px;
+}
+.whitelist_left li a.wy163:hover,.whitelist_left li .a_wy163 {
+    background-position:-132px 0px;
+}
+.whitelist_left li a.qqemail {
+    background-position:0px -46px;
+}
+.whitelist_left li a.qqemail:hover,.whitelist_left li .a_qqemail {
+    background-position:-132px -46px;
+}
+.whitelist_left li a.gmail {
+    background-position:0px -92px;
+}
+.whitelist_left li a.gmail:hover,.whitelist_left li .a_gmail {
+    background-position:-132px -92px;
+}
+.whitelist_left li a.hotmail {
+    background-position:0px -137px;
+}
+.whitelist_left li a.hotmail:hover,.whitelist_left li .a_hotmail {
+    background-position:-132px -137px;
+}
+.whitelist_left li a.sinamail {
+    background-position:0px -183px;
+}
+.whitelist_left li a.sinamail:hover,.whitelist_left li .a_sinamail {
+    background-position:-132px -183px;
+}
+.whitelist_left li a.sohumail {
+    background-position:0px -229px;
+}
+.whitelist_left li a.sohumail:hover,.whitelist_left li .a_sohumail {
+    background-position:-132px -229px;
+}
+.whitelist_left li a.yahoomail {
+    background-position:0px -275px;
+}
+.whitelist_left li a.yahoomail:hover,.whitelist_left li .a_yahoomail {
+    background-position:-132px -275px;
+}
+.whitelist_left li a.chmail {
+    background-position:0px -320px;
+}
+.whitelist_left li a.chmail:hover,.whitelist_left li .a_chmail {
+    background-position:-132px -320px;
+}
+.whitelist_left li a.othermail {
+    background-position:0px -366px;
+}
+.whitelist_left li a.othermail:hover,.whitelist_left li .a_othermail {
+    background-position:-132px -366px;
+}
+.order_detail h4 {
+    color:#676665;
+    font-size:16px;
+    line-height:50px;
+    font-weight:normal;
+}
+.whitelist_right {
+    width:777px;
+    float:left;
+    padding-left:5px;
+}
+.white_right_top {
+    line-height:39px;
+    padding-left:10px;
+    width:767px;
+    background:#fff8e7;
+    border:1px solid #f0e5c9;
+    float:left;
+    margin-bottom:10px;
+}
+.white_right_top span {
+    color:#fc882a;
+}
+.white_right_top a,.white_right_top a:hover {
+    color:#0066cc;
+    font-family:"SimHei","\9ED1\4F53";
+}
+.white_right_bottom {
+    width:777px;
+    background:#fdfdfd;
+    border:1px solid #e6e2e2;
+    float:left;
+    padding:10px 0px;
+}
+.white_right_bottom h3 {
+    font-size:14px;
+    color:#494949;
+    padding:5px 0px 5px 20px;
+    line-height:22px;
+}
+.email_img {
+    text-align:center;
+    margin-bottom:8px;
+}
+.email_img img {
+    border:1px solid #e2e1e1;
+}
+.lottery {
+    float:left;
+    width:570px;
+}
+.lottery li {
+    float:left;
+    margin:5px;
+    line-height:36px;
+    color:#585858;
+    font-size:16px;
+}
+.lottery li span {
+    width:36px;
+    height:36px;
+    display:block;
+    text-align:center;
+    font-size:18px;
+    color:#545251;
+    background-image:url(../images/ico-lottery.png);
+    background-repeat:repeat;
+}
+.lottery li span.select_hover {
+    background-position:0px -84px;
+    cursor:pointer;
+}
+.lottery li span.select_click {
+    background-position:0px -42px;
+    cursor:pointer;
+    color:#fff;
+}
+.select {
+    float:left;
+    width:570px;
+    margin-bottom:15px;
+    padding-bottom:10px;
+    border-bottom:1px solid #ccc;
+}
+.select_results li span {
+    background-position:0px -42px;
+    color:#fff;
+}
+.selection {
+    float:right;
+}
+.selection li {
+    cursor:pointer;
+    margin:0px 10px;
+}
+.lottery_ok {
+    float:left;
+    margin-top:20px;
+}
+.lottery_ok input {
+    background:url(../images/ico-lottery_ok.png) no-repeat;
+    width:93px;
+    height:47px;
+    color:#fff;
+    font-size:20px;
+    border:0px;
+    cursor:pointer;
+}
+.pwstrong {
+    font-size:14px;
+    position:absolute;
+    left:550px;
+    top:290px
+}
+#checkInfoText {
+    font-size:14px;
+    position:absolute;
+    left:210px;
+    top:382px
+}
+.mustinput {
+    display:none;
+}
+.find_password #Phone_Text {
+    font-size:12px;
+    position:absolute;
+    left:210px;
+    top:180px;
+}
+.find_password #Code_Text {
+    font-size:12px;
+    position:absolute;
+    left:210px;
+    top:262px;
+}
+.find_password #Password_Text {
+    font-size:12px;
+    position:absolute;
+    left:210px;
+    top:320px;
+}
+.btSendMsgCSS {
+    display:inline-block;
+    overflow:hidden;
+    margin-top:4px;
+    padding:0;
+    width:116px;
+    height:26px;
+    border:medium none;
+    background:url(../images/buttonbg.png) no-repeat scroll 0 -130px transparent;
+    color:#404040;
+    text-align:center;
+    font-weight:normal;
+    font-size:12px;
+    line-height:26px;
+    cursor:pointer;
+}
+.login_sd_text {
+    margin-top:1px;
+    padding:8px 0 8px 3px;
+    width:302px;
+    height:16px;
+    border:1px solid #bbb;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    background-color:#fff;
+    background-image:none;
+    font-size:14px;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:16px;
+}
+.login_sd_inputred {
+    margin-top:1px;
+    padding:8px 0 8px 3px;
+    width:256px;
+    height:16px;
+    border:1px solid #f00;
+    background-color:#fff;
+    background-image:none;
+    font-size:14px;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:16px;
+}
+#btSendMsg {
+    margin-left:10px;
+}
+.find_password p span {
+    float:left;
+    margin-right:5px;
+    width:auto;
+    line-height:35px;
+}
+.find_password #Code_Text {
+    position:relative;
+    top:0;
+    left:0;
+    padding-left:7px;
+}
+#lbPhoneMsg {
+    padding-left:12px;
+}
+.pwstrong {
+    position:relative;
+    top:0;
+    left:0;
+    float:left;
+    padding-left:125px;
+    font-size:14px;
+}
+.find_password p {
+    position:relative;
+    float:left;
+    padding:10px 0;
+    width:735px;
+}
+.find_password span {
+    line-height:31px;
+}
+#checkInfoText {
+    position:relative;
+    top:0;
+    left:-3px;
+    float:left;
+    font-size:14px;
+}
+.order_input {
+    float:left;
+    margin-top:30px;
+    padding-left:127px;
+}
+.login_client {
+    float:left;
+    padding:21px 0 80px;
+    width:820px;
+}
+.login_client .weibo_login {
+    display:none;
+}
+.find_password p .name {
+    line-height:35px;
+}
+#lbMsg {
+    position:relative;
+    top:0;
+    left:0;
+    padding-left:7px;
+    color:red;
+    font-size:12px;
+}
+.find_password #Password_Text {
+    position:relative;
+    top:0;
+    left:0;
+    font-size:12px;
+}
+#LabMsgConfirm {
+    margin:0;
+}
+#labMsg {
+    margin:0;
+}
+.login_box {
+    margin:0 auto;
+    width:600px;
+}
+.tabs.logins {
+    width:600px;
+    height:auto;
+}
+.tabs.logins .tabs-header li {
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+}
+.tabs.logins .tabs-header {
+    border-bottom:1px solid #DDD;
+}
+.tabs.logins .tabs-header ul {
+    margin-left:72px;
+}
+.tabs.logins .tabs-header .tabs-header-item {
+    margin-right:10px;
+    margin-bottom:-1px;
+    padding:8px 0 0;
+    padding:6px 10px;
+    height:24px;
+    border:1px solid #fff;
+    border-bottom:0;
+    border-bottom:1px solid #ddd;
+    -moz-border-radius-topright:6px;
+    border-top-right-radius:6px;
+    -moz-border-radius-topleft:6px;
+    border-top-left-radius:6px;
+    color:#000;
+    text-align:center;
+    line-height:24px;
+    cursor:pointer;
+}
+.tabs.logins .tabs-header .tabs-header-item.selected {
+    border:1px solid #ddd;
+    border-bottom:1px solid #fff;
+}
+.header-bg,.login-cell-icon,.login-account-icon {
+    background-image:url(../images/login_imgs.png);
+    background-position:1000px 1000px;
+    background-repeat:no-repeat;
+}
+.header-bg {
+    background-position:-9px 0px;
+    height:50px;
+    margin-bottom:50px;
+}
+.header-bg.login-title {
+    background-position:0px -500px;
+}
+.login-cell-icon,.login-account-icon {
+    width:20px;
+    height:20px;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    vertical-align:middle;
+}
+.login-cell-icon {
+    background-position:0px -950px;
+}
+.login-account-icon {
+    background-position:0px -332px;
+}
+.tabs-header-item.selected .login-account-icon {
+    background-position:0px -872px;
+}
+.tabs-header-item.selected .login-cell-icon {
+    background-position:0px -253px;
+}
+.order_content h2,.login_boototm {
+    display:none;
+}
+.login_client {
+    float:left;
+    padding:21px 0 80px;
+    width:820px;
+    background-color:#FFF;
+    border-radius:4px;
+    border:1px solid #DDD;
+}
+.client_pnputd.order-quiry {
+    width:180px;
+    height:49px;
+    background-image:url(../images/login_imgs.png);
+    background-repeat:no-repeat;
+    border:0px;
+    cursor:pointer;
+    background-position:0px -764px;
+    background-color:#fff;
+}
+#loginBox {
+    width:1200px;
+    height:442px;
+    background:#fff;
+    margin:30px auto;
+    font-family:Microsoft YaHei,Arial,sans-serif;
+    box-shadow:1px 1px 3px #CCC;
+    border-radius:2px;
+    border:1px solid #e6e6e6;
+}
+#loginBox .loginLeft {
+    width:700px;
+    height:425px;
+    background:#FFF;
+    float:left;
+    background:url(../images/draw.png) no-repeat center top;
+}
+#loginBox .loginRight {
+    width:470px;
+    height:400px;
+    background:#FFF;
+    float:right;
+    margin-top:20px;
+}
+#loginBox .loginContent {
+    width:284px;
+    height:auto;
+    margin:0 auto;
+}
+#loginBox .lcTop {
+    height:20px;
+    line-height:20px;
+    margin-top:35px;
+}
+#loginBox .lcLoginTxt {
+    font-size:18px;
+    color:#000;
+    float:left;
+}
+#loginBox .lcTop span {
+    float:right;
+    display:block;
+    font-size:12px;
+    color:#545454;
+}
+#loginBox .lcTop a {
+    margin:0 5px;
+    font-size:10px;
+    color:#545454;
+}
+#loginBox .lcTop a:hover {
+    text-decoration:underline;
+}
+#loginBox .lcUserName,#loginBox .lcPasswd {
+    position:relative;
+    z-index:1;
+    width:100%;
+    height:34px;
+    margin-top:28px;
+}
+.codeModelLogin {
+    margin-top:20px;
+}
+#loginBox .lcUserName i,#loginBox .lcPasswd i {
+    position:absolute;
+    z-index:1;
+    left:1px;
+    top:1px;
+    width:32px;
+    height:36px;
+    display:block;
+    background:#ededed url(../images/loginicons.png) no-repeat;
+    background-position:-3px -13px;
+}
+#loginBox .lcPasswd i {
+    background-position:-3px -62px;
+}
+#loginBox .lcUserName input,#loginBox .lcPasswd input {
+    width:232px;
+    height:18px;
+    line-height:18px;
+    padding:9px 10px 9px 40px;
+    font-size:14px;
+    border:1px solid #c6c6c6;
+    border-radius:4px;
+}
+#loginBox .lcUserName .ms_text,#loginBox .lcPasswd .ms_text {
+    position:absolute;
+    z-index:2;
+    left:0;
+    top:0;
+    width:262px;
+    height:36px;
+    line-height:36px;
+    padding:0 10px;
+    border:1px solid #F00;
+    background:#FFE9DC;
+    display:none;
+}
+#loginBox .lcCode {
+    width:284px;
+    height:30px;
+    line-height:30px;
+    margin:10px auto 0;
+    text-align:center;
+}
+#loginBox .lcCode b {
+    float:left;
+    font-size:13px;
+    color:#848484;
+    font-weight:500;
+}
+#loginBox .getCodeBtn {
+    display:block;
+    float:right;
+    width:auto;
+    text-align:center;
+    color:#FF6600;
+    font-size:12px;
+    border-radius:2px;
+    text-decoration:underline;
+    cursor:pointer;
+}
+#loginBox .sending {
+    color:#CCC;
+    text-decoration:none;
+    cursor:default;
+}
+#loginBox .loginCode {
+    width:212px;
+    height:26px;
+    line-height:26px;
+    margin:10px 0;
+    padding:5px 10px 5px 10px;
+    font-size:14px;
+    border:1px solid #c6c6c6;
+    border-radius:2px;
+}
+#loginBox .labmsg,#loginBox .labMsgValidate {
+    float:left;
+    width:100%;
+    text-align:center;
+    color:#F00;
+    margin:10px 0;
+    font-size:12px;
+    font-weight:100;
+}
+#loginBox .labMsgValidate {
+    display:none;
+}
+#loginBox .lcLogin {
+    width:100%;
+    height:auto;
+    margin-top:40px;
+}
+#loginBox .lcLogin input {
+    width:100%;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    color:#FFF;
+    font-size:20px;
+    border:none;
+    outline:none;
+    background:#ff7800;
+    cursor:pointer;
+    border-radius:4px;
+}
+#loginBox .lcOthertxt {
+    line-height:30px;
+    margin-top:30px;
+    font-size:12px;
+    color:#525252;
+    border-bottom:1px solid #C4C4C4;
+}
+#loginBox .lcOther {
+    margin-top:15px;
+}
+#loginBox .weiboBtn,#loginBox .qqBtn {
+    width:134px;
+    height:38px;
+    line-height:38px;
+    float:left;
+    background:url(../images/loginicons_1.png) no-repeat;
+    cursor:pointer;
+}
+#loginBox .weiboBtn {
+    background-position:-7px -130px;
+}
+#loginBox .qqBtn {
+    float:right;
+    background-position:-7px -206px;
+}
+.codeModelLogin #yw0 {
+    margin-top:10px;
+}
+.codeModelLogin #verifchange {
+    float:left;
+    margin-top:10px
+}
+/******* 注册页部分 *******/
+#hidePassword {
+    display:none;
+}
+#register {
+    width:1200px;
+    height:auto;
+    clear:both;
+    margin:30px auto;
+    border:1px solid #ebebeb;
+    border-radius:2px;
+    box-shadow:1px 1px 3px #CCC;
+    background:#fff
+}
+#register .regLeftBox {
+    float:left;
+    width:470px;
+    margin:20px 0 20px 80px;
+}
+.regLeftBox .regtit {
+    width:354px;
+    height:30px;
+    margin-top:50px;
+}
+.regLeftBox .regtit p {
+    font-size:18px;
+    color:#333;
+}
+.regLeftBox .regtit span {
+    margin-top:4px
+}
+.regLeftBox .regtit span a {
+    color:#f60;
+}
+.regLeftBox .regtit span a:hover {
+    text-decoration:underline;
+}
+#register .regList {
+    position:relative;
+    z-index:1;
+    margin:28px 0;
+    font-size:18px;
+    color:#848484;
+}
+#register .regList2 {
+    position:relative;
+    z-index:1;
+    margin:28px 0 0 0;
+    font-size:18px;
+    color:#848484;
+}
+#register .backStep {
+    float:left;
+    text-indent:4px;
+    margin-top:20px;
+    width:108px;
+}
+#register .backStep a {
+    color:#f60;
+}
+#register .backStep a:hover {
+    color:#f60;
+    text-decoration:underline;
+}
+#register .regList label,#register .regList2 label {
+    display:block;
+    height:36px;
+    line-height:36px;
+}
+#register .code label {
+    margin-left:1em;
+}
+#register .sex label label {
+    float:left;
+    margin-left:10px;
+    color:#000;
+}
+#register .regList span,#register .regList2 span {
+    float:left;
+    width:5em;
+    text-align:right;
+}
+#register .phone input,#register .msgCode input,#register .name input,#register .password input,#register .passwordConfirm input,#register .email input,#register .code input {
+    display:block;
+    float:left;
+    width:220px;
+    height:1.4em;
+    line-height:1.4em;
+    padding:7px 15px;
+    margin-left:10px;
+    font-size:14px;
+    border:1px solid #c6c6c6;
+    border-radius:4px;
+}
+#msgCode {
+    display:block;
+    float:left;
+    width:84px;
+    height:1.4em;
+    line-height:1.4em;
+    padding:7px 15px;
+    margin-left:10px;
+    font-size:14px;
+    border:1px solid #c6c6c6;
+    border-radius:4px;
+}
+/*#register .msgCode input {
+	width:115px;
+}
+*/
+#register .getMsgCodeBtn {
+    outline:none;
+    position:absolute;
+    z-index:1;
+    top:2px;
+    left:360px;
+    line-height:30px;
+    float:left;
+    text-decoration:underline;
+    color:#ff7800;
+    font-size:14px;
+    cursor:pointer;
+}
+#register .getMsging {
+    color:#CBCBCB;
+    cursor:default;
+}
+#register .male input,#register .female input {
+    margin:0 8px;
+}
+#register .code input {
+    width:110px;
+}
+#register .code .updateCode {
+    font-size:12px;
+    color:#000;
+}
+#register .checkIcon {
+    position:absolute;
+    z-index:1;
+    top:1px;
+    left:370px;
+    width:35px;
+    height:35px;
+    display:block;
+    background:url(../images/loginicons_1.png?1) no-repeat;
+}
+#register .checkIcon.correct {
+    background-position:0 -602px;
+}
+#register .checkIcon.error {
+    background-position:0 -662px;
+}
+#register .regList .ms_text {
+    position:absolute;
+    z-index:2;
+    left:92px;
+    top:42px;
+    height:22px;
+    line-height:22px;
+    margin-left:20px;
+    color:#F00;
+    font-size:12px;
+}
+#register .regMsg {
+    margin-top:20px;
+    height:auto;
+    overflow:hidden;
+    line-height:1.4em;
+    text-align:center;
+    color:#F00;
+    font-size:12px;
+}
+#register .regBtn {
+    margin:30px 0 30px 100px;
+}
+#register .registerBtn {
+    width:252px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    color:#FFF;
+    font-size:18px;
+    background:#ff7800;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    border-radius:4px;
+}
+#register .verifyBox {
+    width:500px;
+    margin:0 auto;
+}
+#register .verifyTip {
+    font-size:16px;
+    color:#717171;
+    margin:50px 0 20px 0
+}
+#register .red {
+    color:#F00;
+}
+#register .verifyPhone,#register .verifyCode {
+    height:auto;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+    margin:30px 0;
+    font-size:18px;
+    color:#848484;
+}
+#register .verifyPhone label {
+    margin-left:1em;
+    float:left;
+}
+#register .verifyPhone label input,/* #register .verifyCode label input {
+	width:220px;
+	height:1.4em;
+	line-height:1.4em;
+	padding:10px 15px;
+	margin-left:10px;
+	font-size:14px;
+	border:1px solid #c6c6c6;
+}
+*/
+#register .btSendMsgCSS {
+    display:block;
+    float:left;
+    width:9em;
+    height:30px;
+    line-height:30px;
+    margin-left:10px;
+    margin-top:6px;
+    text-align:center;
+    color:#FFF;
+    border:none;
+    outline:none;
+    background:#ff7800;
+    cursor:pointer;
+}
+#register .verifyPhone .sending {
+    background:#CBCBCB;
+    cursor:default;
+}
+#register .verifyMsg {
+    width:400px;
+    height:1.2em;
+}
+#lbPhoneMsg {
+    width:100%;
+    height:1em;
+    line-height:1em;
+    text-align:center;
+    color:#F00;
+    font-size:12px;
+    padding:0;
+    margin:0;
+}
+#register .verifyBtn {
+    margin:30px auto 40px;
+}
+#register .verifyBtn input {
+    display:block;
+    width:252px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    margin-left:75px;
+    color:#FFF;
+    border:none;
+    outline:none;
+    background:#ff7800;
+    cursor:pointer;
+}
+#register .regRightBox {
+    float:right;
+    width:470px;
+    margin:14px 0 10px 0;
+}
+#register .regTxt {
+    font-size:20px;
+    color:#333;
+    margin:51px 0 0 0px;
+}
+#register .regTip {
+    margin-top:6px;
+    overflow:hidden;
+}
+#register .regTip p {
+    clear:both;
+    white-space:nowrap;
+    float:left;
+    line-height:26px;
+    margin-top:18px;
+    padding-left:48px;
+    font-size:14px;
+    color:#717171;
+}
+#register .regTip .jifen {
+    background:url(../images/icon_jifen.png) no-repeat;
+    background-position:0 6px;
+}
+#register .regTip .choujiang {
+    background:url(../images/icon_choujiang.png) no-repeat;
+    background-position:0 6px;
+}
+#register .regTip .activity {
+    background:url(../images/icon_activity.png) no-repeat;
+    background-position:0 6px;
+}
+#register .regTip p b {
+    display:block;
+    color:#333;
+    font-weight:normal;
+}
+.verifyImg {
+    float:left;
+    margin-left:5px
+}
+.verifyImg img {
+    float:left;
+    width:90px
+}
+#verifchange_button {
+    float:left;
+    margin:20px 5px 0 5px;
+    font-size:12px;
+}
+/******* 重置密码页部分 *******/
+#resetPasswd {
+    width:1198px;
+    margin:30px auto;
+    padding-bottom:30px;
+    background:#FFF;
+    border:1px solid #ebebeb;
+    border-radius:2px;
+    box-shadow:1px 1px 3px #CCC;
+}
+#resetPasswd .resetTitle {
+    color:#848484;
+    font-size:18px;
+    margin:30px 0 0 40px;
+}
+#resetPasswd .resetPasswdBox {
+    position:relative;
+    z-index:1;
+    width:530px;
+    height:auto;
+    margin:20px auto 0;
+}
+#resetPasswd .phone,#resetPasswd .code,#resetPasswd .password,#resetPasswd .repeatPassword {
+    overflow:hidden;
+    zoom:1;
+    clear:both;
+    margin-top:18px;
+}
+#resetPasswd .phone label,#resetPasswd .code label,#resetPasswd .password label,#resetPasswd .repeatPassword label {
+    display:block;
+    line-height:40px;
+    font-size:18px;
+    color:#848484;
+}
+#resetPasswd .labelTxt {
+    float:left;
+    width:98px;
+    text-align:right;
+}
+#resetPasswd .phone label input,#resetPasswd .code label input,#resetPasswd .password label input,#resetPasswd .repeatPassword label input {
+    float:left;
+    width:220px;
+    line-height:16px;
+    margin-left:10px;
+    padding:9px 10px;
+    font-size:12px;
+    border:1px solid #c6c6c6;
+    outline:none;
+    background:#FFF;
+}
+#resetPasswd .phoneTipTxt {
+    float:left;
+    margin-left:10px;
+    line-height:40px;
+}
+#resetPasswd .sendMsgBtn {
+    display:block;
+    float:left;
+    width:7em;
+    height:30px;
+    line-height:30px;
+    margin-left:10px;
+    margin-top:6px;
+    text-align:center;
+    color:#ff7800;
+    text-decoration:underline;
+    cursor:pointer;
+}
+#resetPasswd .sending {
+    color:#CBCBCB;
+    cursor:default;
+}
+#resetPasswd .safe {
+    clear:both;
+    float:left;
+    width:242px;
+    margin:5px 0 0 101px;
+    font-size:12px;
+    color:#848484;
+    _margin-left:50px;
+}
+#resetPasswd .safeTxt {
+    float:left;
+}
+#resetPasswd .level {
+    float:left;
+    width:57px;
+    margin-left:3px;
+    text-align:center;
+    color:#FFF;
+    background:#c8c8c8;
+    cursor:default;
+}
+#resetPasswd .levelOne {
+    background:#ff6b49;
+}
+#resetPasswd .levelTwo {
+    background:#f3d15c;
+}
+#resetPasswd .levelThree {
+    background:#a1e243;
+}
+#resetPasswd .errorMsg {
+    position:absolute;
+    z-index:1;
+    left:0;
+    bottom:42px;
+    width:242px;
+    line-height:30px;
+    margin-left:100px;
+    text-align:center;
+    font-size:12px;
+    color:#F00;
+    _position:static;
+}
+#resetPasswd .resetPasswdBtn {
+    clear:both;
+    width:242px;
+    height:36px;
+    line-height:36px;
+    text-align:center;
+    margin:40px 0 0 100px;
+    color:#FFF;
+    border:none;
+    outline:none;
+    background:#ff7800;
+    cursor:pointer;
+}
+#resetPasswd .success {
+    width:364px;
+    height:130px;
+    margin:130px auto 0;
+    background:url(../images/loginicons_1.png) no-repeat 14px -450px;
+    display:none;
+}
+#resetPasswd .success span,#resetPasswd .success a {
+    display:block;
+    text-align:center;
+    font-size:24px;
+    color:#ff7800;
+}
+#resetPasswd .success a {
+    color:#848484;
+}
+/* 注册第二个页面 */
+.stepBox {
+    position:relative;
+    height:85px;
+    border-bottom:2px #eee solid;
+}
+.stepBox ul {
+    width:72%;
+    margin:0 auto;
+    height:auto;
+    overflow:hidden;
+    padding-top:34px;
+}
+.stepBox ul li {
+    float:left;
+    font-size:16px;
+    color:#666;
+    text-align:left;
+    width:24%;
+    margin-left:70px;
+    display:inline;
+}
+.stepBox ul .current,.stepBox ul .active {
+    color:#333;
+}
+.stepBox ul li i {
+    font-style:normal;
+    float:left;
+    width:24px;
+    height:24px;
+    margin-right:10px;
+    text-align:center;
+    border-radius:12px;
+    background:#ff7800;
+    color:#fff;
+    display:inline-block;
+}
+#stepSign {
+    position:absolute;
+    width:180px;
+    height:7px;
+    left:218px;
+    bottom:-7px;
+    background:url('../images/sign_bg.png') no-repeat;
+}
+.two #stepSign {
+    left:488px;
+}
+.three #stepSign {
+    left:752px;
+}
+#register #step2Btn {
+    margin:30px 0 30px 10px;
+}
+.alertBox {
+    margin:50px 0 0 117px;
+    background:#fffeeb;
+    width:252px;
+    height:60px;
+    border:1px #f8bd89 solid;
+}
+.alertBox p {
+    margin:10px;
+    padding-left:32px;
+    background:url('../images/icon_i.png') no-repeat;
+    background-position:0px 10px;
+}
+#register .webStep2 {
+    margin:20px 0 0 0;
+}
+/* 注册成功页面 */
+.finishBox {
+    width:300px;
+    margin:60px auto 30px;
+}
+.finishBox ul {
+}.finishBox ul li {
+     margin:10px 0;
+     text-indent:40px;
+     color:#666;
+ }
+.finishBox ul .finTit {
+    height:35px;
+    line-height:35px;
+    font-size:18px;
+    color:#000;
+    background:url('../images/icon_right.png')no-repeat;
+}
+.finishBox ul li #userPhone {
+    color:#333;
+}
+#smsCode {
+    position:relative;
+}
+.sendSms {
+    position:absolute;
+    right:101px;
+    top:1px;
+    width:110px;
+    border-left:1px #d8dbde solid;
+    text-align:center;
+    height:34px;
+    line-height:34px;
+    font-size:14px;
+    background:#f3f5f6
+}
+#register .regList2 .sendSms #viewSms {
+    display:none;
+    color:#333;
+    width:auto;
+    padding:0 5px;
+    cursor:pointer;
+}
+#sendMsg {
+    font-style:normal;
+    display:none;
+}

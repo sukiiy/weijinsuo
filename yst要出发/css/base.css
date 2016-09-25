@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/*重置默认样式*/
+html{
+    color:#333333;
+    background-color: #f3f5f6;
+}
+/*去掉默认内、外边距*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+    margin:0;
+    padding:0;
+    color: #666;
+}
+h1,h2,h3,h4,h5,h6{
+    display: inline-block;
+}
+fieldset, img, input, button{
+    border:none;
+    border-style: none;
+    outline-style: none;
+}
+input{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+li{
+    list-style: none;
+    float: left;
+}
+
+em,strong,i{
+    font-weight: normal;
+    font-style: normal;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size: 100%;
+    font-weight: normal;
+}
+table{
+    border-collapse: collapse;border-spacing: 0;
+}
+img{
+    vertical-align: top;
+
+}
+/*通用样式*/
+body {
+    font: 14px/1.5 arial, 'Microsoft YaHei', tahoma, \5b8b\4f53, sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+span{
+    position: relative;
+}
+a {
+    text-decoration: none;
+    color: #5d5d5d;
+}
+
+a:link, a:visited {
+    color: #333;
+}
+ a:hover{
+    color:  #FF7800;
+}
+.container, .wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 原子类 */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.ovh {
+    overflow: hidden;
+    zoom: 1;
+}
+.hide {
+    display: none;
+}
+.transparent {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; }
+.clearfix {
+    *zoom: 1;
+}

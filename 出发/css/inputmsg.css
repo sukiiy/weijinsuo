@@ -1,0 +1,11 @@
+﻿.msg {
+    position:absolute;
+    z-index:1;
+    left:0;
+    top:0;
+    width:262px;
+    height:32px;
+    line-height:32px;
+    border:1px solid #F00;
+    background:#FFE9DC;
+}

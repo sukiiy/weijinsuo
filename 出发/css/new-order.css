@@ -1,0 +1,75 @@
+﻿.filter,.result {
+    background:#fff
+}
+.filter dl,.result {
+    overflow:hidden;
+    zoom:1
+}
+.content {
+    width:916px
+}
+.result {
+    padding-top:20px;
+    *padding-bottom:20px;
+    margin-bottom:20px
+}
+.package-mod {
+    margin:0 0 20px 11px;
+    width:290px;
+    _margin-left:8px
+}
+.package-mod .title {
+    width:270px
+}
+.package-mod img {
+    width:290px;
+    height:163px
+}
+.filter {
+    margin-bottom:20px;
+    padding:0 20px
+}
+.filter h2 {
+    border-bottom:1px dashed #ddd;
+    line-height:40px
+}
+.filter h2 span {
+    color:#ff7800;
+    zoom:1;
+    padding:0 3px
+}
+.filter h2 .icon {
+    margin-right:5px
+}
+.filter dl {
+    padding:15px 0 10px 50px
+}
+.filter dt {
+    float:left;
+    width:50px;
+    margin-left:-50px;
+    _margin-left:-25px
+}
+.filter dd {
+    float:left;
+    width:1100px
+}
+.filter dd a {
+    color:#ff7800;
+    display:inline-block;
+    zoom:1;
+    *display:inline;
+    padding:2px 5px;
+    margin:0 5px 5px
+}
+.filter dd span {
+    color:#888
+}
+.filter dd .active,.filter dd a:hover {
+    color:#fff;
+    background:#ff7800;
+    border-radius:2px
+}
+.filter dd .active span,.filter dd a:hover span {
+    color:#fff
+}

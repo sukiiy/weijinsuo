@@ -1,0 +1,1582 @@
+﻿<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="【周边自驾游，就是要出发】要出发旅行网怎么样,要出发周边游旅行网是中国最专业周边自驾游、周边游玩预订网站,提供全国周边游线路的度假酒店,自助游,自由行,景点门票,温泉门票等超低折扣周边游团购。">
+    <meta name="keywords" content="周边游,周边旅游,周末旅游,度假酒店,自驾游,自由行,景点门票">
+    <title>要出发周边游|要出发旅行网官网精选家庭周末旅游团购,度假酒店,自驾游,自由行,景点门票</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        var w_userInfo = 0;
+        var w_apiUrl = 'http://api.yaochufa.com/';
+        var w_apiVersion = '3.7';
+        var w_apiSystem = 'pc';
+        var w_currentUrl = 'http://www.yaochufa.com';
+        var w_siteUrl = 'http://www.yaochufa.com';
+        var w_apiphpUrl = 'http://apiphp.yaochufa.com/';
+        var w_header = 'gUTrvrB7YZhgRHvY%2FMdl%2BLJZcrV49SX5gViIYzLJ%2B%2FxQOg2tyc2AuhHdVcFBPsIQ';
+        var payApiUrl = 'http://payapi.yaochufa.com/';
+        var w_provinceId = '21';
+    </script>    <script>
+        var sfCode = -1;
+    </script>
+</head>
+<body>
+    <!-- 公用头部模块 -->
+    <div class="header">
+        <!-- 顶部导航条 -->
+        <div class="top-nav wrapper">
+            <div class=" clearfix">
+                <div class="fl">
+                    <span class="hello">您好，欢迎来到要出发!</span>
+                    <span class="current">
+                        <i class="icon icon-location"></i>
+                        <em id="J-cur-province"></em>
+                    </span>
+                    <span class="change" id="J-change-province">
+                        <em>更换省份</em>
+                        <i class="icon icon-triangle-bottom"></i>
+                    </span>
+                </div>
+                <div class="fr">
+                    <span class="login" id="J-login-reg">
+                        [<a href="http://www.yaochufa.com/user/login?returnurl=http://www.yaochufa.com/" id="J-login">登录</a>]&nbsp;[<a href="http://www.yaochufa.com/user/register?returnurl=http://www.yaochufa.com/" id="J-reg">免费注册</a>]</span>                    <span class="viewed" id="J-open-viewd">
+                        <i class="icon icon-clock"></i>
+                        <em>最近浏览</em>
+                        <i class="icon icon-triangle-bottom"></i>
+                    </span>
+                    <span class="app" id="J-wap">
+                        <a href="http://www.yaochufa.com/app/" target="_blank">
+                            <i class="icon icon-app"></i>
+                            <em>手机APP</em>
+                        </a>
+                        <img src="images/photo-app.png" alt="扫描进去手机版">
+                    </span>
+                </div>
+                <!-- 省份列表 -->
+                <table class="province-list" id="J-province-list">
+                    <tr>
+                        <th>华南地区</th>
+                        <td>
+                            <span id="GuangDong">广东</span>
+                            <span id="HaiNan">海南</span>
+                            <span id="FuJian">福建</span>
+                            <span id="JiangXi">江西</span>
+                            <span id="GuangXiZhuangZu">广西</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>华东地区</th>
+                        <td>
+                            <span id="ShangHai">上海</span>
+                            <span id="ZheJiang">浙江</span>
+                            <span id="JiangSu">江苏</span>
+                            <span id="AnHui">安徽</span>
+                            <span id="ShanDong">山东</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>华北地区</th>
+                        <td>
+                            <span id="BeiJing">北京</span>
+                            <span id="TianJin">天津</span>
+                            <span id="HeBei">河北</span>
+                            <span id="ShanXi">山西</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>西南地区</th>
+                        <td>
+                            <span id="SiChuan">四川</span>
+                            <span id="ZhongQing">重庆</span>
+                            <span id="YunNan">云南</span>
+                            <span id="GuiZhou">贵州</span>
+                            <span id="XiCang">西藏</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>西北地区</th>
+                        <td>
+                            <span id="ShanXiSheng">陕西</span>
+                            <span id="GanSu">甘肃</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>东北地区</th>
+                        <td>
+                            <span id="JiLin">吉林</span>
+                            <span id="LiaoNing">辽宁</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>华中地区</th>
+                        <td>
+                            <span id="HuNan">湖南</span>
+                            <span id="HuBei">湖北</span>
+                            <span id="HeNan">河南</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>港澳台</th>
+                        <td>
+                            <span id="XiangGang">香港</span>
+                            <span id="AoMen">澳门</span>
+                        	<span id="TaiWan">台湾</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="last">*提示：根据你选择的省份，我们将为你切换至该地区的首页</td>
+                    </tr>
+                </table>
+                <!-- 最近浏览 -->
+                <ul class="viewed-list" id="J-viewed-list">
+                	<li class="loading">
+                        <img src="images/loading.gif" alt="加载中...">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 顶部广告条 -->
+        <div class="wrapper top-banner" id="J-top-banner"></div>
+        <!-- 头部Logo与搜索框 -->
+        <div class="wrapper clearfix top-main">
+            <!-- Logo -->
+            <a href="http://www.yaochufa.com" class="logo">
+                <img src="images/logo.png" alt="要出发精选周边游">
+            </a>
+            <!-- 搜索框 -->
+            <form class="search" id="J-search">
+                <i class="icon icon-search"></i>
+                <input type="text" value="目的地，酒店，景点关键字" class="search-box focus-input" id="J-search-box">
+                <input type="submit" value="搜索" class="search-submit" data-site="http://www.yaochufa.com" data-search="http://s.yaochufa.com">
+            </form>
+            <!-- 用户订单信息 -->
+            <div class="user-info" id="J-user-info">
+                <div class="user-info-btn ovh">
+                    <a href="http://www.yaochufa.com/usercenter/index" target="_blank" class="my-ycf"><i class="icon icon-user"></i>我的要出发</a>
+                    <a href="http://www.yaochufa.com/usercenter/ordersearch" target="_blank" class="my-order"><i class="icon icon-order"></i><span>订单查询</span></a>
+                </div>
+                <ul class="ovh">
+                    <li><a href="http://www.yaochufa.com/usercenter/orderlist?type=2" target="_blank">未付款订单<span></span></a></li>
+                    <li><a href="http://www.yaochufa.com/usercenter/orderlist?type=1" target="_blank">已付款订单<span></span></a></li>
+                    <li><a href="http://www.yaochufa.com/usercenter/coupons" target="_blank">我的现金券<span></span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 导航 -->
+        <div class="wrapper menu clearfix">
+            <!-- 左边导航列表 -->
+            <div class="side-menu">
+                <h2 class="menu-title">周边游推荐</h2>
+                <div class="menu-wraper">
+                    <div class="menu-mod">
+                        <span><i class="icon icon-destination"></i></span>
+                        <a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C" target="_blank" class="menu-mod-title">目的地：广东</a>
+                        <ul>
+                            <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E5%B9%BF%E5%B7%9E" target="_blank">广州</a></li>
+                            <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%83%A0%E5%B7%9E" target="_blank">惠州</a></li>
+                            <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E7%8F%A0%E6%B5%B7" target="_blank">珠海</a></li>
+                            <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%B7%B1%E5%9C%B3" target="_blank">深圳</a></li>
+                            <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E9%9F%B6%E5%85%B3" target="_blank">韶关</a></li>
+                            <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E9%98%B3%E6%B1%9F" target="_blank">阳江</a></li>
+                            <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%B1%9F%E9%97%A8" target="_blank">江门</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-mod">
+                        <span><i class="icon icon-hot-scene"></i></span>
+                        <a href="/scenic" target="_blank" class="menu-mod-title">热门景区</a>
+                        <ul>
+                            <li><a href="/scenic/info/23" target="_blank">广州长隆</a></li>
+                            <li><a href="/scenic/info/1003" target="_blank">珠海长隆</a></li>
+                            <li><a href="/scenic/info/6" target="_blank">巽寮湾</a></li>
+                            <li><a href="/scenic/info/1470" target="_blank">海陵岛</a></li>
+                            <li><a href="/scenic/info/994" target="_blank">东部华侨城</a></li>
+                            <li><a href="/scenic/info/1115" target="_blank">双月湾</a></li>
+                            <li><a href="/scenic/info/1018" target="_blank">上下川岛</a></li>
+                            <li><a href="/scenic/info/1004" target="_blank">大小梅沙</a></li>
+                            <li><a href="/scenic/info/1002" target="_blank">南澳</a></li>
+                            <li><a href="/scenic/info/1471" target="_blank">沙扒湾</a></li>
+                            <li><a href="/scenic/info/4" target="_blank">南昆山</a></li>
+                            <li><a href="/scenic/info/1247" target="_blank">放鸡岛</a></li>
+                            <li><a href="/scenic/info/1007" target="_blank">大亚湾</a></li>
+                            <li><a href="/scenic/info/1178" target="_blank">内外伶仃岛</a></li>
+                            <li><a href="/scenic/info/1642" target="_blank">雁南飞茶田</a></li>
+                            <li><a href="/scenic/info/1026" target="_blank">世界之窗</a></li>
+                            <li><a href="/scenic/info/988" target="_blank">广州塔</a></li>
+                            <li><a href="/scenic/info/995" target="_blank">百万葵园</a></li>
+                            <li><a href="/scenic/info/1672" target="_blank">罗浮山</a></li>
+                            <li><a href="/scenic/info/1492" target="_blank">亚婆角滨海旅游区</a></li>
+                            <li><a href="/scenic/info/1243" target="_blank">红海湾</a></li>
+                            <li><a href="/scenic/info/1344" target="_blank">龙门铁泉</a></li>
+                            <li><a href="/scenic/info/2" target="_blank">从化温泉</a></li>
+                            <li><a href="/scenic/info/1174" target="_blank">清远温泉</a></li>
+                            <li><a href="/scenic/info/986" target="_blank">御温泉</a></li>
+                            <li><a href="/scenic/info/1014" target="_blank">森波拉</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-mod">
+                        <span><i class="icon icon-recomm-theme"></i></span>
+                        <a href="/theme" target="_blank" class="menu-mod-title">主题推荐</a>
+                        <ul>
+                            <li><a href="/theme/info/89" target="_blank">香港迪士尼乐园十周年</a></li>
+                            <li><a href="/theme/info/571" target="_blank">周末1日游top榜【亲子篇】</a></li>
+                            <li><a href="/theme/info/613" target="_blank">和风温泉小镇，暖暖好销魂</a></li>
+                            <li><a href="/theme/info/557" target="_blank">竹林泡汤泉，穿洞入桃源</a></li>
+                            <li><a href="/theme/info/592" target="_blank">原来白富美是这样炼成的！</a></li>
+                            <li><a href="/theme/info/542" target="_blank">广东温泉奢壕榜TOP8</a></li>
+                            <li><a href="/theme/info/525" target="_blank">温泉禅修，脚步跟上灵魂</a></li>
+                            <li><a href="/theme/info/378" target="_blank">这些地方98%的人没去过</a></li>
+                            <li><a href="/theme/info/340" target="_blank">宝贝玩得开心还能涨知识！</a></li>
+                            <li><a href="/theme/info/132" target="_blank">广东泡泉专题</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-mod download-app">
+                        <span><i class="icon icon-download-app"></i></span>
+                        <a href="/app" target="_blank">手机客户端下载</a>
+                    </div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-list-mod ml-destination">
+                                                <dl>
+                            <dt><span>当前省份：广东</span><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C" target="_blank">全部地区</a></dt>
+                            <dd>
+                                <ul>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E5%B9%BF%E5%B7%9E" target="_blank">广州</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E9%9F%B6%E5%85%B3" target="_blank">韶关</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%B7%B1%E5%9C%B3" target="_blank">深圳</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E7%8F%A0%E6%B5%B7" target="_blank">珠海</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%B1%95%E5%A4%B4" target="_blank">汕头</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E4%BD%9B%E5%B1%B1" target="_blank">佛山</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%B1%9F%E9%97%A8" target="_blank">江门</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%B9%9B%E6%B1%9F" target="_blank">湛江</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E8%8C%82%E5%90%8D" target="_blank">茂名</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E8%82%87%E5%BA%86" target="_blank">肇庆</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%83%A0%E5%B7%9E" target="_blank">惠州</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%A2%85%E5%B7%9E" target="_blank">梅州</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%B1%95%E5%B0%BE" target="_blank">汕尾</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%B2%B3%E6%BA%90" target="_blank">河源</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E9%98%B3%E6%B1%9F" target="_blank">阳江</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%B8%85%E8%BF%9C" target="_blank">清远</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E4%B8%9C%E8%8E%9E" target="_blank">东莞</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E4%B8%AD%E5%B1%B1" target="_blank">中山</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%BD%AE%E5%B7%9E" target="_blank">潮州</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E6%8F%AD%E9%98%B3" target="_blank">揭阳</a></li>
+                                <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E4%BA%91%E6%B5%AE" target="_blank">云浮</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                                                <dl>
+                            <dt><span>全国热门城市</span></dt>
+                            <dd>
+                                <ul>
+                                                                        <li><a href="http://s.yaochufa.com/psc_%E5%8C%97%E4%BA%AC-city_%E5%8C%97%E4%BA%AC" target="_blank">北京</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E4%B8%8A%E6%B5%B7-city_%E4%B8%8A%E6%B5%B7" target="_blank">上海</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E6%B5%B7%E5%8D%97-city_%E4%B8%89%E4%BA%9A" target="_blank">三亚</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E5%B9%BF%E5%B7%9E" target="_blank">广州</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E4%BA%91%E5%8D%97-city_%E4%B8%BD%E6%B1%9F" target="_blank">丽江</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E8%A5%BF-city_%E6%A1%82%E6%9E%97" target="_blank">桂林</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E7%A6%8F%E5%BB%BA-city_%E5%8E%A6%E9%97%A8" target="_blank">厦门</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E5%9B%9B%E5%B7%9D-city_%E6%88%90%E9%83%BD" target="_blank">成都</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E9%87%8D%E5%BA%86-city_%E9%87%8D%E5%BA%86" target="_blank">重庆</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E6%B1%9F%E8%8B%8F-city_%E8%8B%8F%E5%B7%9E" target="_blank">苏州</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E6%B5%99%E6%B1%9F-city_%E6%9D%AD%E5%B7%9E" target="_blank">杭州</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E5%B1%B1%E4%B8%9C-city_%E9%9D%92%E5%B2%9B" target="_blank">青岛</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E9%99%95%E8%A5%BF-city_%E8%A5%BF%E5%AE%89" target="_blank">西安</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E8%BE%BD%E5%AE%81-city_%E5%A4%A7%E8%BF%9E" target="_blank">大连</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E4%BA%91%E5%8D%97-city_%E5%A4%A7%E7%90%86" target="_blank">大理</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E9%A6%99%E6%B8%AF-city_%E9%A6%99%E6%B8%AF" target="_blank">香港</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E6%BE%B3%E9%97%A8-city_%E6%BE%B3%E9%97%A8" target="_blank">澳门</a></li>
+                                                                         <li><a href="http://s.yaochufa.com/psc_%E5%8F%B0%E6%B9%BE-city_%E5%8F%B0%E5%8C%97" target="_blank">台北</a></li>
+                                                                     </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="menu-list-mod ml-hot-scene">
+                        <div class="thumb">
+                                                                                        <a href="/scenic/info/23" target="_blank">
+                                    <img src="images/oyybafd6cgoabcizaaget7iupsg243.jpg">
+                                    <span>广州长隆</span>
+                                </a>
+                                                                                                                    <a href="/scenic/info/1003" target="_blank">
+                                    <img src="images/56011e726b0b6.jpg">
+                                    <span>珠海长隆</span>
+                                </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                <dl class="right-list">
+                            <dt>热门景区</dt>
+                            <dd>
+                                <ul>
+                                                                                                                                                                                                                                                            <li><a href="/scenic/info/6" target="_blank">巽寮湾</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1470" target="_blank">海陵岛</a></li>
+                                                                                                                                                <li><a href="/scenic/info/994" target="_blank">东部华侨城</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1115" target="_blank">双月湾</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1018" target="_blank">上下川岛</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1004" target="_blank">大小梅沙</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1002" target="_blank">南澳</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1471" target="_blank">沙扒湾</a></li>
+                                                                                                                                                <li><a href="/scenic/info/4" target="_blank">南昆山</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1247" target="_blank">放鸡岛</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1007" target="_blank">大亚湾</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1178" target="_blank">内外伶仃岛</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1642" target="_blank">雁南飞茶田</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1026" target="_blank">世界之窗</a></li>
+                                                                                                                                                <li><a href="/scenic/info/988" target="_blank">广州塔</a></li>
+                                                                                                                                                <li><a href="/scenic/info/995" target="_blank">百万葵园</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1672" target="_blank">罗浮山</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1492" target="_blank">亚婆角滨海旅游区</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1243" target="_blank">红海湾</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1344" target="_blank">龙门铁泉</a></li>
+                                                                                                                                                <li><a href="/scenic/info/2" target="_blank">从化温泉</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1174" target="_blank">清远温泉</a></li>
+                                                                                                                                                <li><a href="/scenic/info/986" target="_blank">御温泉</a></li>
+                                                                                                                                                <li><a href="/scenic/info/1014" target="_blank">森波拉</a></li>
+                                                                                                        </ul>
+                            </dd>
+                        </dl>
+                                            </div>
+                    <div class="menu-list-mod ml-recomm-theme">
+                        <div class="thumb">
+                                                                                    <a href="/theme/info/89" target="_blank">
+                                <img src="images/21b7af9eb0c6a671464c506a4735579e.jpg">
+                                <span>香港迪士尼乐园十周年</span>
+                            </a>
+                                                                                                                <a href="/theme/info/571" target="_blank">
+                                <img src="images/5683801a518bd.jpg">
+                                <span>周末1日游top榜【亲子篇】</span>
+                            </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                <dl class="right-list">
+                            <dt>热门主题</dt>
+                            <dd>
+                                <ul>
+                                                                                                                                                                                                                                                            <li><a href="/theme/info/613" target="_blank">和风温泉小镇，暖暖好销魂</a></li>
+                                                                                                                                                <li><a href="/theme/info/557" target="_blank">竹林泡汤泉，穿洞入桃源</a></li>
+                                                                                                                                                <li><a href="/theme/info/592" target="_blank">原来白富美是这样炼成的！</a></li>
+                                                                                                                                                <li><a href="/theme/info/542" target="_blank">广东温泉奢壕榜TOP8</a></li>
+                                                                                                                                                <li><a href="/theme/info/525" target="_blank">温泉禅修，脚步跟上灵魂</a></li>
+                                                                                                                                                <li><a href="/theme/info/378" target="_blank">这些地方98%的人没去过</a></li>
+                                                                                                                                                <li><a href="/theme/info/340" target="_blank">宝贝玩得开心还能涨知识！</a></li>
+                                                                                                                                                <li><a href="/theme/info/132" target="_blank">广东泡泉专题</a></li>
+                                                                                                        </ul>
+                            </dd>
+                        </dl>
+                                            </div>
+                </div>
+            </div>
+            <!-- 主导航 -->
+            <div class="main-menu ovh" id="J-main-manu">
+                <ul class="ovh">
+                    <li class="active"><a href="http://www.yaochufa.com/">首页</a></li>
+                    <li><a href="http://www.yaochufa.com/neworder">每周新品</a></li>
+                    <li><a href="http://you.yaochufa.com/funny" id="you-link">好去处</a></li>
+                    <li><a href="http://www.yaochufa.com/tuan">团购预约</a></li>
+                    <li><a href="http://www.yaochufa.com/app">手机版下载</a></li>
+                </ul>
+                <span class="slider-border" id="J-slider-border"></span>
+            </div>
+        </div>
+    </div>
+    <!-- 右侧广告图 -->
+    <div class="wrapper right-img" id="J-right-img"></div>
+    <!-- 幻灯片 -->
+    <div class="slideshow" id="J-slideshow"></div>
+    <!-- 主内容 -->
+    <div class="container">
+        <!-- 城市周边游 -->
+        <div class="section city-tour" id="J-city-tour">
+            <div class="section-title">
+                <h2><strong>城市周边游</strong><span>/&nbsp;&nbsp;海量周边实惠套餐</span></h2>
+            </div>
+            <div class="section-main border">
+                <div class="sm-left">
+                    <div class="tab-btn ovh">
+                        <ul class="ovh">                                                                            <li  class="active" ><a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E5%B9%BF%E5%B7%9E">广州</a></li>
+                        </ul>
+                        <a href="http://s.yaochufa.com/psc_%E5%B9%BF%E4%B8%9C-city_%E5%B9%BF%E5%B7%9E" target="_blank" class="search-city" id="J-search-city"><span>广州周边游</span><i class="icon-more">&gt;&gt;</i></a>
+                    </div>
+                    <div class="tab-main clearfix">
+                            <div class="tab-mod active">
+                           <a class="package-mod" href="/package/2948" target="_blank" title="广州&nbsp;|&nbsp;长隆水上乐园门票">
+                                    <img src="images/white_bg.png" class="lazy-load" data-original="http://cdn1.jinxidao.com/group1/M00/03/B4/ooYBAFe0OZSAdWfVAAEwnsfbfCk172.jpg?imageView2/1/w/296/h/166/q/100/" alt="长隆水上乐园门票">
+                                    <strong class="title">广州&nbsp;|&nbsp;长隆水上乐园门票</strong>
+                                    <div class="recomm">
+                                        <span><em>284429</em>人购买</span>
+                                        <span><em>97%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p> 超级大喇叭、超级造浪池、超级巨兽碗、巨洪峡……还有一场场让人震撼的水上娱乐表演show，引爆玩水激情。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>85<span>起/份</span></strong>
+                                            <em>门市价：150</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>5.6折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                <a class="package-mod" href="/package/21311" target="_blank" title="广州&nbsp;|&nbsp;正佳极地海洋世界">
+                                    <img src="images/white_bg.png" class="lazy-load" data-original="http://cdn1.jinxidao.com/images/ProductList466/2016/2/hl_21311_od_2_55c68daf86e143de840a08efa6199516.jpg?imageView2/1/w/296/h/166/q/100/" alt="正佳极地海洋世界">
+                                    <strong class="title">广州&nbsp;|&nbsp;正佳极地海洋世界</strong>
+                                    <div class="recomm">
+                                        <span><em>107294</em>人购买</span>
+                                        <span><em>94%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>正佳极地海洋世界拥有共500种30000多只极地海洋动物，是座室内空中极地海洋馆。展馆内设有二十一大主题展区，给您集观赏、娱乐、休闲、科普、环保于一体的梦幻主题式极地海洋体验。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>88<span>起/份</span></strong>
+                                            <em>门市价：220</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>4折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/8768" target="_blank" title="花都&nbsp;|&nbsp;美林湖温泉大酒店">
+                                    <img src="images/white_bg.png" class="lazy-load" data-original="http://cdn1.jinxidao.com/group1/M00/02/48/ooYBAFdfoTuAET4EAAEQAOCC_FU495.jpg?imageView2/1/w/296/h/166/q/100/" alt="美林湖温泉大酒店">
+                                    <strong class="title">花都&nbsp;|&nbsp;美林湖温泉大酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>8310</em>人购买</span>
+                                        <span><em>98%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>来美林湖叹冰山、泡冰泉、品冰啤。游欧式城堡温泉小镇，住“意大利山城”，享天然温泉，看美丽冻人冰山，感受冰凉酷爽。更有童趣狮子星宝贝乐园，畅享欢乐亲子时光。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>758<span>起/份</span></strong>
+                                            <em>门市价：2710</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2.7折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/18977" target="_blank" title="番禺&nbsp;|&nbsp;广州亚特兰酒店">
+                                    <img src="images/white_bg.png" class="lazy-load" data-original="http://cdn1.jinxidao.com/group1/M00/03/A9/ooYBAFexhmiACQYYAACzfGansGE746.jpg?imageView2/1/w/296/h/166/q/100/" alt="广州亚特兰酒店">
+                                    <strong class="title">番禺&nbsp;|&nbsp;广州亚特兰酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>576</em>人购买</span>
+                                        <span><em>87%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>专门为小宝贝打造的亲子型酒店，背靠长隆旅游度假中心，紧邻香江野生动物世界、长隆欢乐世界等，距离大石地铁站、汉溪长隆地铁站仅五分钟车程，交通便利。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>488<span>起/份</span></strong>
+                                            <em>门市价：1088</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>4.4折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/2951" target="_blank" title="番禺&nbsp;|&nbsp;长隆香江野生动物世界门票">
+                                    <img src="images/white_bg.png" class="lazy-load" data-original="http://cdn1.jinxidao.com/group1/M00/02/B3/ooYBAFd6G-SAIUHwAAB9wVlRSHc440.jpg?imageView2/1/w/296/h/166/q/100/" alt="长隆香江野生动物世界门票">
+                                    <strong class="title">番禺&nbsp;|&nbsp;长隆香江野生动物世界门票</strong>
+                                    <div class="recomm">
+                                        <span><em>141990</em>人购买</span>
+                                        <span><em>98%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>来野生动物世界，跟着“爸爸去哪儿”，从自驾区五大洲到步行区一次过饱览500多种20000余只动物，看遍世界珍奇动物。十大趣味动物知识课堂，让你边游园边“学习”，妙趣横生。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>100<span>起/份</span></strong>
+
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/24999" target="_blank" title="广州&nbsp;|&nbsp;碧桂园广州凤凰城酒店">
+                                    <img src="images/white_bg.png" class="lazy-load" data-original="http://cdn1.jinxidao.com/group1/M00/02/DB/oYYBAFeEWEWAAnSKAAIAAn0cfpU605.jpg?imageView2/1/w/296/h/166/q/100/" alt="碧桂园广州凤凰城酒店">
+                                    <strong class="title">广州&nbsp;|&nbsp;碧桂园广州凤凰城酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>98</em>人购买</span>
+                                        <span><em>85%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>这是一家广阔的山水主题式酒店，背倚凤凰山，面朝翠湖，邻近南香山、香雪公园、白水寨等众多景点，游玩方便。品自助晚餐和下午茶，单车骑行，远离都市享悠然度假时光。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>538<span>起/份</span></strong>
+                                            <em>门市价：1000</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>5.3折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                        </div>
+                           <div class="tab-mod ">
+                                                            <a class="package-mod" href="/package/2555" target="_blank" title="惠州&nbsp;|&nbsp;海尚湾畔度假公寓">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/00/33/ooYBAFbyEMqAC6dxAAB8HYw0sy4234.jpg?imageView2/1/w/296/h/166/q/100/" alt="海尚湾畔度假公寓">
+                                    <strong class="title">惠州&nbsp;|&nbsp;海尚湾畔度假公寓</strong>
+                                    <div class="recomm">
+                                        <span><em>27247</em>人购买</span>
+                                        <span><em>89%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>在巽寮湾美景中驻足，海景花园散步，享受金海湾浪漫的浴缸，畅游无边际泳池。阳光、海水、沙滩，美景、美食在前，乐不思蜀，假日出游的理想之选！</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>288<span>起/份</span></strong>
+                                            <em>门市价：1388</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/1613" target="_blank" title="惠州&nbsp;|&nbsp;巽寮湾凤池岛旅游度假村">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/01/AC/oYYBAFc1ouuAJpaoAAEv-tpv4aY847.jpg?imageView2/1/w/296/h/166/q/100/" alt="巽寮湾凤池岛旅游度假村">
+                                    <strong class="title">惠州&nbsp;|&nbsp;巽寮湾凤池岛旅游度假村</strong>
+                                    <div class="recomm">
+                                        <span><em>37745</em>人购买</span>
+                                        <span><em>88%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>日暖凤池，背靠青山，海水清澈蔚蓝，沙堤洁白晶莹，与海光山色朝夕辉映。酒店180°海景阳台、户外游泳、私家沙滩，助您情系凤池岛，巽寮湾浪漫海滨游。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>278<span>起/份</span></strong>
+                                            <em>门市价：1680</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>1.6折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/22738" target="_blank" title="惠州&nbsp;|&nbsp;巽寮湾海公园度假酒店（凤凰山水店）">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/00/BC/oYYBAFb80wuAChp7AAFg9satOaI126.jpg?imageView2/1/w/296/h/166/q/100/" alt="巽寮湾海公园度假酒店（凤凰山水店）">
+                                    <strong class="title">惠州&nbsp;|&nbsp;巽寮湾海公园度假酒店（凤凰山水店）</strong>
+                                    <div class="recomm">
+                                        <span><em>704</em>人购买</span>
+                                        <span><em>81%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>公寓地处巽寮湾中区，紧邻天后宫商业街，举步即达沙滩，方便前往磨子石、三角洲岛等景区。公寓房间融合山、海元素，入住即可感受清新海风，开启欢乐度假之旅。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>278<span>起/份</span></strong>
+                                            <em>门市价：1288</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2.1折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/2448" target="_blank" title="惠州&nbsp;|&nbsp;巽寮湾三角洲岛门票">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/00/68/oYYBAFbyHfqAVPs1AABItw1kRUo783.jpg?imageView2/1/w/296/h/166/q/100/" alt="巽寮湾三角洲岛门票">
+                                    <strong class="title">惠州&nbsp;|&nbsp;巽寮湾三角洲岛门票</strong>
+                                    <div class="recomm">
+                                        <span><em>17699</em>人购买</span>
+                                        <span><em>89%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>三角洲岛有如大海上的世外桃源，海水清澈碧绿，沙滩洁白无瑕，动物石像景观千姿百态，惟妙惟肖。到三角洲岛来，忘记时间，忘记工作，忘记烦忧，这里便是天堂。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>120<span>起/份</span></strong>
+                                            <em>门市价：168</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>7.1折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/18942" target="_blank" title="惠州&nbsp;|&nbsp;惠州双月湾宝安虹海湾度假酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/01/EB/oYYBAFdFQxWADRnEAAFPVD-ggcc043.jpg?imageView2/1/w/296/h/166/q/100/" alt="惠州双月湾宝安虹海湾度假酒店">
+                                    <strong class="title">惠州&nbsp;|&nbsp;惠州双月湾宝安虹海湾度假酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>4405</em>人购买</span>
+                                        <span><em>86%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>双月湾宝安虹海湾度假酒店坐落位于惠东双月湾，离香港、东莞、深圳2小时生活圈。邻近鹧鸪洞滨海温泉、白鹭保护基地、平海古镇等，让您近距离享受海边纯粹的外海度假生活。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>398<span>起/份</span></strong>
+                                            <em>门市价：1299</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>3折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/5254" target="_blank" title="惠州&nbsp;|&nbsp;巽寮湾金海湾喜来登度假酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_5254_od_5_5a10b59188f54136972fa28b4e065f16.jpg?imageView2/1/w/296/h/166/q/100/" alt="巽寮湾金海湾喜来登度假酒店">
+                                    <strong class="title">惠州&nbsp;|&nbsp;巽寮湾金海湾喜来登度假酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>9213</em>人购买</span>
+                                        <span><em>93%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>惠州金海湾喜来登度假酒店座落在美丽的巽寮湾畔。周围环绕的是洁白的沙滩和魅力的热带花园，面朝大海，聆听海浪涛声，白鸟呢喃，享受阳光，度过难忘的温馨假期。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>788<span>起/份</span></strong>
+                                            <em>门市价：2888</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2.7折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                        </div>
+                          <div class="tab-mod ">
+                                                            <a class="package-mod" href="/package/11271" target="_blank" title="珠海&nbsp;|&nbsp;珠海长隆海洋王国门票">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/02/CA/oYYBAFd-NQCAOSIKAADwkoAYvwc222.jpg?imageView2/1/w/296/h/166/q/100/" alt="珠海长隆海洋王国门票">
+                                    <strong class="title">珠海&nbsp;|&nbsp;珠海长隆海洋王国门票</strong>
+                                    <div class="recomm">
+                                        <span><em>142359</em>人购买</span>
+                                        <span><em>98%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>汇聚珍稀海洋生物，分八大园区：刺激为主的雨林飞翔，娱乐观赏为主的海洋奇观，亲子项目为主的缤纷世界，海豚主题的海豚湾，冰雪主题的极地探险，水主题的海象山，表演为主的横琴海。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>245<span>起/份</span></strong>
+                                            <em>门市价：265</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>9.2折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/15828" target="_blank" title="珠海&nbsp;|&nbsp;珠海长隆企鹅酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_15828_od_4_417c919566dd451d9b049a5b6ee81a21.jpg?imageView2/1/w/296/h/166/q/100/" alt="珠海长隆企鹅酒店">
+                                    <strong class="title">珠海&nbsp;|&nbsp;珠海长隆企鹅酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>32162</em>人购买</span>
+                                        <span><em>98%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>风格独特的企鹅极地主题酒店，设有专门通道直达海洋王国，与国际马戏城回廊相通。酒店总共有2000间房，以企鹅为主题，结合海洋寓意、沙滩的明快色彩营造旅游度假的轻松气氛。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>898<span>起/份</span></strong>
+                                            <em>门市价：1800</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>4.9折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/11598" target="_blank" title="珠海&nbsp;|&nbsp;珠海德翰大酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_11598_od_2_d9bc391db2c74b239d250c5a3460fe64.jpg?imageView2/1/w/296/h/166/q/100/" alt="珠海德翰大酒店">
+                                    <strong class="title">珠海&nbsp;|&nbsp;珠海德翰大酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>7927</em>人购买</span>
+                                        <span><em>93%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>酒店背倚风景秀丽的珠海海滨公园烟墩山，面向碧波万倾的南中国海，博大宏伟的欧陆式建筑风格，匠心独具的艺术氛围令人耳目一新，犹如镶嵌在南海上的一颗璀璨明珠，熠熠生辉。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>305<span>起/份</span></strong>
+                                            <em>门市价：1012</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>3折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/22563" target="_blank" title="珠海&nbsp;|&nbsp;珠海长隆迎海酒店公寓">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/2016/2/hl_22563_od_1_d8370e8181ba44ecb3974092c06db8ab.jpg?imageView2/1/w/296/h/166/q/100/" alt="珠海长隆迎海酒店公寓">
+                                    <strong class="title">珠海&nbsp;|&nbsp;珠海长隆迎海酒店公寓</strong>
+                                    <div class="recomm">
+                                        <span><em>1240</em>人购买</span>
+                                        <span><em>97%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>公寓位于珠海横琴新区的核心地段，毗邻横琴澳门大学，驱车前往横琴口岸或珠海长隆国际海洋度假区只需5分钟，坐拥开阔的园林景观视野，亦成为横琴瞩目的地标。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>398<span>起/份</span></strong>
+                                            <em>门市价：1200</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>3.3折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/11731" target="_blank" title="珠海&nbsp;|&nbsp;外伶仃岛两日游">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/03/4D/ooYBAFebDcGAHuQGAAFAnddBJBA586.jpg?imageView2/1/w/296/h/166/q/100/" alt="外伶仃岛两日游">
+                                    <strong class="title">珠海&nbsp;|&nbsp;外伶仃岛两日游</strong>
+                                    <div class="recomm">
+                                        <span><em>625</em>人购买</span>
+                                        <span><em>88%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>旅店位于伶仃岛的中心位置，靠近海滩，可谓山奇水美，优雅恬静，四面临海，空气清新，交通方便，给您舒适、整洁、温馨的服务。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>508<span>起/份</span></strong>
+                                            <em>门市价：1180</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>4.3折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/21491" target="_blank" title="珠海&nbsp;|&nbsp;珠海海湾大酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/00/3B/ooYBAFbyEvaAL1R-AACFQu70Vy4485.jpg?imageView2/1/w/296/h/166/q/100/" alt="珠海海湾大酒店">
+                                    <strong class="title">珠海&nbsp;|&nbsp;珠海海湾大酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>777</em>人购买</span>
+                                        <span><em>95%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>酒店屹立于繁华商业地带，背山面海，距拱北关口和九洲港码头仅5分钟车程，邻近珠海渔女、圆明新园、珠海长隆海洋王国、国际马戏城等景点，90分钟内即可抵达香港、广州、深圳等地。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>588<span>起/份</span></strong>
+                                            <em>门市价：1358</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>4.3折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                        </div>
+                          <div class="tab-mod ">
+                                                            <a class="package-mod" href="/package/2433" target="_blank" title="深圳&nbsp;|&nbsp;东部华侨城-瀑布酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/02/C2/oYYBAFd8yZSAPD7LAADUV765cLk684.jpg?imageView2/1/w/296/h/166/q/100/" alt="东部华侨城-瀑布酒店">
+                                    <strong class="title">深圳&nbsp;|&nbsp;东部华侨城-瀑布酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>15319</em>人购买</span>
+                                        <span><em>95%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>酒店以水为主题设计，通过空中走廊，穿越瀑布，走入彷若水晶宫般的酒店大堂，美轮美奂，在东部华侨城景区内，到这里来玩转大侠谷，悠游茶溪谷，畅享玩水乐趣，一起来开启瀑布之旅吧。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>648<span>起/份</span></strong>
+                                            <em>门市价：1178</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>5.5折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/11241" target="_blank" title="深圳&nbsp;|&nbsp;深圳世界之窗门票">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/03/77/oYYBAFeoUkeAGsD2AAFbYUVHWhA042.jpg?imageView2/1/w/296/h/166/q/100/" alt="深圳世界之窗门票">
+                                    <strong class="title">深圳&nbsp;|&nbsp;深圳世界之窗门票</strong>
+                                    <div class="recomm">
+                                        <span><em>122470</em>人购买</span>
+                                        <span><em>92%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>世界之窗位于深圳湾畔，特色的缩微景区，是一个把世界奇观、历史遗迹、古今名胜、民间歌舞表演融为一体的人造主题公园，畅享浪漫狂想曲，演绎梦幻童话世界。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>55<span>起/份</span></strong>
+                                            <em>门市价：80</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>6.8折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/7563" target="_blank" title="深圳&nbsp;|&nbsp;溪涌悦榕湾工人度假村">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_7563_od_2_9a0074cf3d4445d9afcd665436b6ca89.jpg?imageView2/1/w/296/h/166/q/100/" alt="溪涌悦榕湾工人度假村">
+                                    <strong class="title">深圳&nbsp;|&nbsp;溪涌悦榕湾工人度假村</strong>
+                                    <div class="recomm">
+                                        <span><em>5018</em>人购买</span>
+                                        <span><em>89%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>入住悦榕湾度假村，远离闹市喧嚣，园区内常年绿树成荫，四季鸟语花香。看绿树成荫，海天一色，漫步在长达600米的私家海滩，水清沙细、海床平缓，领略美丽海滨风光。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>340<span>起/份</span></strong>
+                                            <em>门市价：748</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>4.5折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/2428" target="_blank" title="深圳&nbsp;|&nbsp;东部华侨城-黑森林酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/02/C2/oYYBAFd8zDSAbGUtAAD7duTgLqQ244.jpg?imageView2/1/w/296/h/166/q/100/" alt="东部华侨城-黑森林酒店">
+                                    <strong class="title">深圳&nbsp;|&nbsp;东部华侨城-黑森林酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>8512</em>人购买</span>
+                                        <span><em>94%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>东部华侨城两天一夜童话之旅：入住充满童话色彩的主题酒店，回归童年梦想。体验现代版“爱丽丝绿野仙踪”，玩转大侠谷、茶溪谷两大主题乐园，品味茵特拉根温泉养生文化。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>888<span>起/份</span></strong>
+                                            <em>门市价：1048</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>8.4折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/5106" target="_blank" title="深圳&nbsp;|&nbsp;南澳鹿嘴山庄">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_5106_od_2_0ac1889e59a34278847bed8d9b6e19b4.jpg?imageView2/1/w/296/h/166/q/100/" alt="南澳鹿嘴山庄">
+                                    <strong class="title">深圳&nbsp;|&nbsp;南澳鹿嘴山庄</strong>
+                                    <div class="recomm">
+                                        <span><em>2753</em>人购买</span>
+                                        <span><em>85%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>《美人鱼》拍摄地，迎接深圳第一缕阳光的地方，“原始生态、山海情怀、蜜月天堂、运动海岸”。远离尘嚣，来鹿嘴山庄，住木屋别墅，观海景，坐游艇，品地道海鲜，享生态闲情。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>454<span>起/份</span></strong>
+                                            <em>门市价：688</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>6.5折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/19128" target="_blank" title="深圳&nbsp;|&nbsp;深圳隐秀山居酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_19128_od_1_98851b0c9ceb44e5aef21c3eb2a6a669.jpg?imageView2/1/w/296/h/166/q/100/" alt="深圳隐秀山居酒店">
+                                    <strong class="title">深圳&nbsp;|&nbsp;深圳隐秀山居酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>153</em>人购买</span>
+                                        <span><em>100%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>深圳龙岗高尔夫球酒店，与250万平方米正中高尔夫景观原生融合。酒店距离地铁站5分钟车程，私家园林曲径通幽，假山泉池，珍奇花木，尽显世外桃源的舒适。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>888<span>起/份</span></strong>
+                                            <em>门市价：2900</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>3折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                        </div>
+                         <div class="tab-mod ">
+                                                            <a class="package-mod" href="/package/22606" target="_blank" title="韶关&nbsp;|&nbsp;韶关丹霞山门票">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/2016/2/hl_22606_od_1_fbd22f5bc4cb44ed8d94f2c98c99a547.jpg?imageView2/1/w/296/h/166/q/100/" alt="韶关丹霞山门票">
+                                    <strong class="title">韶关&nbsp;|&nbsp;韶关丹霞山门票</strong>
+                                    <div class="recomm">
+                                        <span><em>1346</em>人购买</span>
+                                        <span><em>100%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>丹霞山是“丹霞地貌”命名地，由680多座顶平、身陡、麓缓的红色砂砾岩石构成，“色如渥丹，灿若明霞”，丹霞山风景名胜区内有大小景点990多个，来这里欣赏大自然的鬼斧神工。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>90<span>起/份</span></strong>
+                                            <em>门市价：100</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>9折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/20499" target="_blank" title="韶关&nbsp;|&nbsp;广东大峡谷门票">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_20499_od_1_37970a11bf3242eeb14ad36b7d4f6cb8.jpg?imageView2/1/w/296/h/166/q/100/" alt="广东大峡谷门票">
+                                    <strong class="title">韶关&nbsp;|&nbsp;广东大峡谷门票</strong>
+                                    <div class="recomm">
+                                        <span><em>1986</em>人购买</span>
+                                        <span><em>100%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>广东醉美峡谷，集“雄、奇、险、峻、秀、美”于一身，以三宝、四绝、五瀑享誉，素有“峡谷之母、地质之母”的美誉，为探险旅游佳地。“冰雪谷”主题冰雪馆，现零下15℃北国冰雪风光。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>35<span>起/份</span></strong>
+                                                                                        
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/20888" target="_blank" title="韶关&nbsp;|&nbsp;（免预约）水上丹霞门票（船票）">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_20888_od_1_2a274af5f4ce4f25a733b03e6d6ba00f.jpg?imageView2/1/w/296/h/166/q/100/" alt="（免预约）水上丹霞门票（船票）">
+                                    <strong class="title">韶关&nbsp;|&nbsp;（免预约）水上丹霞门票（船票）</strong>
+                                    <div class="recomm">
+                                        <span><em>419</em>人购买</span>
+                                        <span><em>100%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>爬山不游江，枉到丹霞山。乘船游水上丹霞，近观群象过江、赤壁丹霞、金龟朝圣等二十多处知名景点。船行江上，两岸美景雄奇状观，世外桃源的阡陌炊烟，置身其中，彷如人间仙境。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>45<span>起/份</span></strong>
+                                                                                        
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/20170" target="_blank" title="韶关&nbsp;|&nbsp;韶关乳源大峡谷丽宫果园度假酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_20170_od_1_c184fac0f59a45cbb2e659abdd1d382a.jpg?imageView2/1/w/296/h/166/q/100/" alt="韶关乳源大峡谷丽宫果园度假酒店">
+                                    <strong class="title">韶关&nbsp;|&nbsp;韶关乳源大峡谷丽宫果园度假酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>967</em>人购买</span>
+                                        <span><em>98%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>酒店位于韶关市乳源县大布镇大峡谷风景区，拥有自然舒适，新西兰国际环保标准设计的木屋别墅，与“雄”、“奇”、“险”、“秀”的峡谷奇景相映成彰。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>143<span>起/份</span></strong>
+                                            <em>门市价：528</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2.7折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/4382" target="_blank" title="韶关&nbsp;|&nbsp;韶关新丰云天海温泉原始森林度假村">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/00/56/ooYBAFbyGRSAc3NFAABqwUPxyAM692.jpg?imageView2/1/w/296/h/166/q/100/" alt="韶关新丰云天海温泉原始森林度假村">
+                                    <strong class="title">韶关&nbsp;|&nbsp;韶关新丰云天海温泉原始森林度假村</strong>
+                                    <div class="recomm">
+                                        <span><em>4920</em>人购买</span>
+                                        <span><em>96%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>度假村是以高山密林为主的原生态峡谷温泉度假村，温泉水直入客房，房间中央新风系统让山林清新空气布满房间，登山、桌球室、禅修室、瑜伽室、篮球场等应有尽有，满足您的养生需求。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>348<span>起/份</span></strong>
+                                            <em>门市价：1480</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2.3折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/13521" target="_blank" title="韶关&nbsp;|&nbsp;韶关曹溪温泉假日度假村">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/00/1A/ooYBAFbyCcOAcIfTAABqAXnrvkE696.jpg?imageView2/1/w/296/h/166/q/100/" alt="韶关曹溪温泉假日度假村">
+                                    <strong class="title">韶关&nbsp;|&nbsp;韶关曹溪温泉假日度假村</strong>
+                                    <div class="recomm">
+                                        <span><em>5553</em>人购买</span>
+                                        <span><em>87%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>度假村背靠群山，平坐福地，绿水环绕，鸟语花香。毗邻旅游胜地千年古刹南华寺、世界地质公园丹霞山等。是您商务、旅游、休闲、度假的理想去处。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>450<span>起/份</span></strong>
+                                            <em>门市价：5400</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>0.8折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                        </div>
+                          <div class="tab-mod ">
+                                                            <a class="package-mod" href="/package/11693" target="_blank" title="阳江&nbsp;|&nbsp;阳江海陵岛闸坡保利银滩度假酒店-海王星">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/02/AE/ooYBAFd2TfaAeeoMAAChy50OtXc185.jpg?imageView2/1/w/296/h/166/q/100/" alt="阳江海陵岛闸坡保利银滩度假酒店-海王星">
+                                    <strong class="title">阳江&nbsp;|&nbsp;阳江海陵岛闸坡保利银滩度假酒店-海王星</strong>
+                                    <div class="recomm">
+                                        <span><em>8600</em>人购买</span>
+                                        <span><em>91%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>酒店立于海陵岛十里银滩精华段，东南亚热带风情建筑，推窗即可欣赏蔚蓝海景，踏沙逐浪，轻享海风。酒店配套设施完善，海滨浴场、康体中心、游泳池……皆为酒店倍添辉煌。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>366<span>起/份</span></strong>
+                                            <em>门市价：1680</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2.1折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/10681" target="_blank" title="阳江&nbsp;|&nbsp;阳江海陵岛闸坡保利皇冠假日酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/03/77/ooYBAFeoQfqASrmrAAEBLT9KFE4957.jpg?imageView2/1/w/296/h/166/q/100/" alt="阳江海陵岛闸坡保利皇冠假日酒店">
+                                    <strong class="title">阳江&nbsp;|&nbsp;阳江海陵岛闸坡保利皇冠假日酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>4782</em>人购买</span>
+                                        <span><em>92%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>海陵岛保利皇冠假日酒店位于十里银滩景区，邻近南海一号博物馆、大角湾景区，让您轻松畅玩魅力阳江。漫步沙滩、且听风吟，在碧海蓝天的惬意中，度过闲情时光。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>928<span>起/份</span></strong>
+                                            <em>门市价：2388</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>3.8折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/22052" target="_blank" title="阳江&nbsp;|&nbsp;阳江海陵岛维思瑞度假公寓•敏捷黄金海岸店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/03/76/ooYBAFeoK3WAVas4AADTJMgdFmE223.jpg?imageView2/1/w/296/h/166/q/100/" alt="阳江海陵岛维思瑞度假公寓•敏捷黄金海岸店">
+                                    <strong class="title">阳江&nbsp;|&nbsp;阳江海陵岛维思瑞度假公寓•敏捷黄金海岸店</strong>
+                                    <div class="recomm">
+                                        <span><em>474</em>人购买</span>
+                                        <span><em>81%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>酒店位于海陵岛黄金海岸，紧邻敏捷欢乐黄金岛、南海一号博物馆、一夜埕购物街等旅游景点。拥有面朝大海、山景的客房，以中国风、海洋风装修为主，让您臻享不一样的滨海度假体验。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>288<span>起/份</span></strong>
+                                            <em>门市价：800</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>3.6折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/11361" target="_blank" title="阳江&nbsp;|&nbsp;阳江海陵岛闸坡蓝波湾大酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/03/0D/oYYBAFeN63yAFjgmAAEJcD8cBF0671.jpg?imageView2/1/w/296/h/166/q/100/" alt="阳江海陵岛闸坡蓝波湾大酒店">
+                                    <strong class="title">阳江&nbsp;|&nbsp;阳江海陵岛闸坡蓝波湾大酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>19520</em>人购买</span>
+                                        <span><em>93%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>阳江海陵岛闸坡蓝波湾大酒店毗邻大角湾、十里银滩、南海一号、马尾岛等景点，游沙滩、吃海鲜、赏日落，样样都令人无法抗拒！</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>282<span>起/份</span></strong>
+                                            <em>门市价：980</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2.8折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/12518" target="_blank" title="阳江&nbsp;|&nbsp;一呆公寓（原伊思德度假公寓）·闸坡阳江海陵岛保利银滩店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/03/80/ooYBAFepq86AFXosAAC5PjQgO0U539.jpg?imageView2/1/w/296/h/166/q/100/" alt="一呆公寓（原伊思德度假公寓）·闸坡阳江海陵岛保利银滩店">
+                                    <strong class="title">阳江&nbsp;|&nbsp;一呆公寓（原伊思德度假公寓）·闸坡阳江海陵岛保利银滩店</strong>
+                                    <div class="recomm">
+                                        <span><em>1867</em>人购买</span>
+                                        <span><em>88%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>海陵岛一呆公寓·保利银滩坐落于海陵岛十里银滩西区，毗邻景区“十里银滩”，在房间内就能欣赏浪漫海景。轻松游玩沙滩海岛，亲海逐浪，体验中国“东方夏威夷 ”的奔放夏日！</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>278<span>起/份</span></strong>
+                                            <em>门市价：798</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>3.4折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/22053" target="_blank" title="阳江&nbsp;|&nbsp;阳江海陵岛维思瑞度假公寓•恒大夏威夷店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/01/1F/ooYBAFcV38CAGgwoAAGRp7TLGvA001.jpg?imageView2/1/w/296/h/166/q/100/" alt="阳江海陵岛维思瑞度假公寓•恒大夏威夷店">
+                                    <strong class="title">阳江&nbsp;|&nbsp;阳江海陵岛维思瑞度假公寓•恒大夏威夷店</strong>
+                                    <div class="recomm">
+                                        <span><em>773</em>人购买</span>
+                                        <span><em>92%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>海陵岛维思瑞·恒大夏威夷店位于海陵岛恒大·夏威夷，步行即达恒大海上夏威夷沙滩，让您轻松畅享滨海度假生活，饱览海景，感受阳光、沙滩、海水的和谐结合，臻享美妙度假体验。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>380<span>起/份</span></strong>
+                                            <em>门市价：800</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>4.7折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                        </div>
+                            <div class="tab-mod ">
+                                                            <a class="package-mod" href="/package/5341" target="_blank" title="台山&nbsp;|&nbsp;台山下川岛/上川岛套票">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/01/4B/oYYBAFcfREKAaPhEAAENVxDBvZo204.jpg?imageView2/1/w/296/h/166/q/100/" alt="台山下川岛/上川岛套票">
+                                    <strong class="title">台山&nbsp;|&nbsp;台山下川岛/上川岛套票</strong>
+                                    <div class="recomm">
+                                        <span><em>12933</em>人购买</span>
+                                        <span><em>96%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>拥抱南海明珠，登陆亚热带海岛，漫步十里飞沙滩。为您登岛游玩提供一站式服务，迷醉浪漫海岛！</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>140<span>起/份</span></strong>
+                                            <em>门市价：154</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>9折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/3016" target="_blank" title="台山&nbsp;|&nbsp;下川岛海滨阁大酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_3016_od_3_4475fb66291b490c96ebba3331db2256.jpg?imageView2/1/w/296/h/166/q/100/" alt="下川岛海滨阁大酒店">
+                                    <strong class="title">台山&nbsp;|&nbsp;下川岛海滨阁大酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>6550</em>人购买</span>
+                                        <span><em>91%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p> 海滨阁大酒店是一家舒适温馨的度假酒店，举步可到沙滩，坐拥千米椰林，迷人王府洲海景，蓝天碧海，美不胜收。细软沙滩，吹海风，吃烧烤，喝椰汁，捉沙蟹，乐不思蜀！</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>248<span>起/份</span></strong>
+                                            <em>门市价：680</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>3.6折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/24841" target="_blank" title="江门&nbsp;|&nbsp;上川岛蓝天凯云度假酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/03/66/ooYBAFei7ayAJoWbAAFiyGYaxs4565.jpg?imageView2/1/w/296/h/166/q/100/" alt="上川岛蓝天凯云度假酒店">
+                                    <strong class="title">江门&nbsp;|&nbsp;上川岛蓝天凯云度假酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>85</em>人购买</span>
+                                        <span><em>100%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>酒店位于台山市上川岛飞沙滩旅游中心景区内。酒店装修典雅，以彰显海景山水园林为主，观海阳台错落有致，大海沙滩蓝天白云扑面而来，让你360°体验地地道道的海岛生活。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>199<span>起/份</span></strong>
+                                            <em>门市价：780</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2.5折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/11717" target="_blank" title="台山&nbsp;|&nbsp;下川岛帝苑别墅度假村">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/03/42/oYYBAFeZfjyAOg31AAC1iPCI2BU718.jpg?imageView2/1/w/296/h/166/q/100/" alt="下川岛帝苑别墅度假村">
+                                    <strong class="title">台山&nbsp;|&nbsp;下川岛帝苑别墅度假村</strong>
+                                    <div class="recomm">
+                                        <span><em>1436</em>人购买</span>
+                                        <span><em>93%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>酒店坐落于下川岛景区，是园林式度假酒店，步行3分钟即达沙滩，轻松畅游“中国普吉岛”，感受银沙白浪，套餐更搭配下川岛套票，为您登岛游玩提供一站式服务。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>187<span>起/份</span></strong>
+                                            <em>门市价：888</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>2.1折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/2040" target="_blank" title="台山&nbsp;|&nbsp;台山康桥温泉度假村">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/group1/M00/00/62/ooYBAFbyHHaADkb5AAD-5gx7A7A078.jpg?imageView2/1/w/296/h/166/q/100/" alt="台山康桥温泉度假村">
+                                    <strong class="title">台山&nbsp;|&nbsp;台山康桥温泉度假村</strong>
+                                    <div class="recomm">
+                                        <span><em>8124</em>人购买</span>
+                                        <span><em>95%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>依山傍水，过百个特色各异的温泉池，点缀于度假村中，以绿树红花间隔，私密安静。入住东南亚风情梦幻客房，感受环境幽雅的康桥温泉，泡百种花样温泉，氤氲雾气。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>370<span>起/份</span></strong>
+                                            <em>门市价：1080</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>3.4折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                            <a class="package-mod" href="/package/18286" target="_blank" title="江门&nbsp;|&nbsp;上川岛夏日酒店">
+                                    <img src="images/white_bg.png" class="lazy" data-original="http://cdn1.jinxidao.com/images/ProductList466/hl_18286_od_1_7dbeea2a953b4e16b9d461f8b9697ad9.jpg?imageView2/1/w/296/h/166/q/100/" alt="上川岛夏日酒店">
+                                    <strong class="title">江门&nbsp;|&nbsp;上川岛夏日酒店</strong>
+                                    <div class="recomm">
+                                        <span><em>223</em>人购买</span>
+                                        <span><em>96%</em>好评</span>
+                                    </div>
+                                    <div class="des">
+                                        <p>欧式田园风主题酒店，岛上文艺范、小清新的酒店。上川岛夏日酒店位于飞沙滩旅游区内，距离天然海浴场不足百米，轻松畅享阳光沙滩，感受不一样的海岛浪漫风情。</p>
+                                        <span class="price">
+                                            <strong><i>&yen;</i>217<span>起/份</span></strong>
+                                            <em>门市价：1250</em>                                            <span class="sale-tips"><i class="icon icon-sale"></i>1.7折</span>
+                                        </span>
+                                    </div>
+                                    <div class="tips hide">
+                                                                                                                        <!--<i class="icon icon-minus">立减</i>-->
+                                    </div>
+                                </a>
+                                                        </div>
+                  </div>
+                </div>
+                <div class="sm-right">
+                    <h3>新品推荐
+                        <a href="/neworder" target="_blank">查看全部
+                            <i class="icon-more">&gt;&gt;</i>
+                        </a>
+                    </h3>
+                    <ul>
+                        <li>
+                        <a href="/package/25816" target="_blank" title="小小山寨王一天游" alt="山寨王归来！远离城市，回到大丰门欢乐山谷，保护领土，在山上体验丛林穿越、射箭、溯溪挑战、云梯爬树、浅滩竹排水战！体验课堂以外的生活技能，体验自己动手丰衣足食的乐趣。">
+                            <img src="images/white_bg.png" data-original="http://cdn1.jinxidao.com/group1/M00/03/CB/ooYBAFe8HHiAJKgGAAEnJyoim6s171.jpg?imageView2/1/w/220/h/128/q/100/" class="lazy-load" alt="小小山寨王一天游">
+                            <span class="title">小小山寨王一天游</span>
+                            <p>
+                              <span>
+                                <strong><i>&yen;</i>188</strong>
+                              </span>
+                            </p>
+                        </a>
+                    </li>
+                        <li>
+                            <a href="/package/25797" target="_blank" title="深圳大中华喜来登酒店" alt="入住酒店，享用美味丰盛的自助餐，尽情做一回饕餮之客。酒店邻近地铁罗宝线会展中心站，通过地铁可直达香港关口及深圳主要购物、观光及商务地段，品味美食之余，还可畅玩深圳周边。">
+                                <img src="images/white_bg.png" data-original="http://cdn1.jinxidao.com/group1/M00/03/CD/oYYBAFe9SQiAVL5DAABoxmDubdY081.jpg?imageView2/1/w/220/h/128/q/100/" class="lazy-load" alt="深圳大中华喜来登酒店">
+                                <span class="title">深圳大中华喜来登酒店</span>
+                                <p>
+                                    <em class="sale-tips">
+                                        <i class="icon icon-sale"></i>4.9折
+                                    </em>
+                                    <span>
+                                          <em>门市价&yen;2468</em>
+                                            <strong><i>&yen;</i>1224</strong>
+                                    </span>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/package/25784" target="_blank" title="佛山乐8运动馆" alt="新一代安全好玩的大型儿童运动欢乐天地，拥有8D互动影院、丛林狩猎、太空沙乐园等开放式项目，同时融入室内拓展、CS实景对战、超级攀岩、童趣沙滩、淘气堡等丰富有趣的项目。">
+                                <img src="images/white_bg.png" data-original="http://cdn1.jinxidao.com/group1/M00/03/CD/oYYBAFe9R9uADutXAAFv6l6CrZ8368.jpg?imageView2/1/w/220/h/128/q/100/" class="lazy-load" alt="佛山乐8运动馆">
+                                <span class="title">佛山乐8运动馆</span>
+                                <p>
+                                    <em class="sale-tips"><i class="icon icon-sale"></i>9折</em>                                    <span>
+                <em>门市价&yen;50</em>                                        <strong><i>&yen;</i>45</strong>
+            </span>
+                                </p>
+                            </a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 周边景区 -->
+        <div class="section around-tour">
+            <div class="section-title">
+                <h2><a href="/scenicnear" target="_blank">周边景区</a><span>/&nbsp;&nbsp;享受不一样的风情</span></h2>
+            </div>
+            <div class="section-main border">
+                <div class="sm-left">
+                    <ul>
+                         <li class="big-img">
+                            <a href="/scenic/info/23" target="_blank">
+                                <img src="images/white_bg.png" data-original="http://cdn6.jinxidao.com/group1/M00/02/B0/oYYBAFd6CGOAbcIzAAGET7iupsg243.jpg?imageView2/1/w/518/h/290/q/100/" class="lazy-load" alt="广州长隆" title="广州长隆">
+                                <div>
+                                    <p>
+                                        <strong>广州市&nbsp;广州长隆</strong>
+                                        <em>广东省广州市番禺区汉溪长隆</em>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                                                                                                                                                <li>
+                            <a href="/scenic/info/6" target="_blank">
+                                <img src="images/white_bg.png" data-original="http://cdn6.jinxidao.com/uploads/201509/55fa87308c2ea.jpg?imageView2/1/w/186/h/140/q/100/" class="lazy-load" alt="巽寮湾" title="巽寮湾">
+                                <div>
+                                    <span>惠州市&nbsp;巽寮湾</span>
+                                </div>
+                            </a>
+                        </li>
+                                                                                                <li>
+                            <a href="/scenic/info/1003" target="_blank">
+                                <img src="images/white_bg.png" data-original="http://cdn6.jinxidao.com/uploads/201509/56011e726b0b6.jpg?imageView2/1/w/186/h/140/q/100/" class="lazy-load" alt="珠海长隆" title="珠海长隆">
+                                <div>
+                                    <span>珠海市&nbsp;珠海长隆</span>
+                                </div>
+                            </a>
+                        </li>
+                                                                                                <li>
+                            <a href="/scenic/info/1470" target="_blank">
+                                <img src="images/white_bg.png" data-original="http://cdn6.jinxidao.com/group1/M00/03/D2/ooYBAFe-VhKALsdjAAEtagPVoq0628.jpg?imageView2/1/w/186/h/140/q/100/" class="lazy-load" alt="海陵岛" title="海陵岛">
+                                <div>
+                                    <span>阳江市&nbsp;海陵岛</span>
+                                </div>
+                            </a>
+                        </li>
+                                                                                                <li>
+                            <a href="/scenic/info/994" target="_blank">
+                                <img src="images/white_bg.png" data-original="http://cdn6.jinxidao.com/group1/M00/02/B0/oYYBAFd6CoiAKC7JAAFDb6BwJm0327.jpg?imageView2/1/w/186/h/140/q/100/" class="lazy-load" alt="东部华侨城" title="东部华侨城">
+                                <div>
+                                    <span>深圳市&nbsp;东部华侨城</span>
+                                </div>
+                            </a>
+                        </li>
+                                                                                                                    </ul>
+                </div>
+                <div class="sm-right">
+                    <h3>旅游攻略<a href="http://you.yaochufa.com/" target="_blank">查看全部<i class="icon-more">&gt;&gt;</i></a></h3>
+                    <ul class="color-list">
+                                                                                                    <li>
+                       <a href="http://you.yaochufa.com/funny/v_2288" target="_blank">
+                                        <strong class="color1">广州</strong>
+                                        <span>带娃玩转长隆奇妙飞鸟王国</span>
+                       </a>
+                          </li>
+                                                                                                    <li>
+                             <a href="http://you.yaochufa.com/funny/v_2279" target="_blank">
+                                        <strong class="color2">珠海</strong>
+                                        <span>出发啦！梦幻海洋王国大冒险！</span>
+                                    </a>
+                                                            </li>
+                                                                                                    <li>
+                                                                    <a href="http://you.yaochufa.com/funny/v_2245" target="_blank">
+                                        <strong class="color3">深圳</strong>
+                                        <span>香港海洋公园全攻略，第一次去必看</span>
+                                    </a>
+                                                            </li>
+                                                                                                    <li>
+                                                                    <a href="http://you.yaochufa.com/funny/v_2254" target="_blank">
+                                        <strong class="color4">广州</strong>
+                                        <span>国庆游宝典①第一次去云南怎么玩？</span>
+                                    </a>
+                                                            </li>
+                                                                                                    <li>
+                                                                    <a href="http://you.yaochufa.com/funny/v_2191" target="_blank">
+                                        <strong class="color5">深圳</strong>
+                                        <span>东部华侨城超全攻略，去之前必看</span>
+                                    </a>
+                                                            </li>
+                                                                                                    <li>
+                                                                    <a href="http://you.yaochufa.com/funny/v_1519" target="_blank">
+                                        <strong class="color6">佛山</strong>
+                                        <span>南海这条古村竟上了央视？</span>
+                                    </a>
+                                                            </li>
+                                                                                                    <li>
+                                                                    <a href="http://you.yaochufa.com/funny/v_1498" target="_blank">
+                                        <strong class="color7">佛山</strong>
+                                        <span>遛娃好去处！广东省首个健康体验馆</span>
+                                    </a>
+                                                            </li>
+                                                                                                    <li>
+                                                                    <a href="http://you.yaochufa.com/funny/v_1504" target="_blank">
+                                        <strong class="color8">佛山</strong>
+                                        <span>6月未到，亚艺公园荷花已经开啦</span>
+                                    </a>
+                                                            </li>
+                                                                                                                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 精品主题 -->
+        <div class="section choice-tour">
+            <div class="section-title">
+                <h2><a href="/theme" target="_blank">精选主题</a><span>/&nbsp;&nbsp;玩转当季热门</span></h2>
+            </div>
+            <div class="section-main border">
+                <div class="sm-left">
+                    <ul>
+                                                                        <li>
+                            <a href="/theme/info/353" target="_blank">
+                                <img src="images/white_bg.png" data-original="http://cdn6.jinxidao.com/group1/M00/03/15/ooYBAFePHviAXdBKAAFd3hrA_EM829.jpg?imageView2/1/w/296/h/174/q/100/" class="lazy-load" alt="鼓浪屿情调酒店" title="鼓浪屿情调酒店">
+                                <div>
+                                    <strong>鼓浪屿情调酒店</strong>
+                                                                                                        </div>
+                            </a>
+                        </li>
+                                                                                                <li>
+                            <a href="/theme/info/315" target="_blank">
+                                <img src="images/white_bg.png" data-original="http://cdn6.jinxidao.com/uploads/201509/55f7c46de6342.jpg?imageView2/1/w/296/h/174/q/100/" class="lazy-load" alt="江南七大古镇" title="江南七大古镇">
+                                <div>
+                                    <strong>江南七大古镇</strong>
+                                                                                                        </div>
+                            </a>
+                        </li>
+                                                                                                <li>
+                            <a href="/theme/info/366" target="_blank">
+                                <img src="images/white_bg.png" data-original="http://cdn6.jinxidao.com/uploads/201510/5616291918b13.jpg?imageView2/1/w/296/h/174/q/100/" class="lazy-load" alt="大理精品客栈" title="大理精品客栈">
+                                <div>
+                                    <strong>大理精品客栈</strong>
+                                                                                                        </div>
+                            </a>
+                        </li>
+                                                                    </ul>
+                </div>
+                <div class="sm-right">
+                    <div>
+                        <h3>全国热门<a href="http://s.yaochufa.com" target="_blank">查看全部<i class="icon-more">&gt;&gt;</i></a></h3>
+                        <a href="#" target="_blank" class="head ovh" id="J-hot-package"></a>
+                                                <ul class="ovh">
+                                                        <li><a href="http://s.yaochufa.com/city_广州" target="_blank">广州</a></li>
+                                                        <li><a href="http://s.yaochufa.com/city_丽江" target="_blank">丽江</a></li>
+                                                        <li><a href="http://s.yaochufa.com/city_厦门" target="_blank">厦门</a></li>
+                                                        <li><a href="http://s.yaochufa.com/city_成都" target="_blank">成都</a></li>
+                                                        <li><a href="http://s.yaochufa.com/city_重庆" target="_blank">重庆</a></li>
+                                                        <li><a href="http://s.yaochufa.com/city_杭州" target="_blank">杭州</a></li>
+                                                        <li><a href="http://s.yaochufa.com/city_青岛" target="_blank">青岛</a></li>
+                                                        <li><a href="http://s.yaochufa.com/city_西安" target="_blank">西安</a></li>
+                                                        <li><a href="http://s.yaochufa.com/city_台北" target="_blank">台北</a></li>
+                                                    </ul>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右侧固定导航栏 -->
+    <ul class="fixed-navbar">
+        <li class="download-app">
+            <a href="#" target="_blank">
+                <i>扫二维码</i>
+                <div>
+                    <strong>下载要出发APP</strong>
+                    <img src="images/appcode.png">
+                </div>
+            </a>
+        </li>
+        <li class="service-tel">
+            <a href="#" target="_blank">
+                <i>客服电话</i>
+                <div>
+                    <span>24小时客服电话</span>
+                    <em>400-118-1166</em>
+                </div>
+            </a>
+        </li>
+        <li class="weixin">
+            <a href="#" target="_blank">
+                <i>关注微信</i>
+                <div>
+                    <strong>关注微信公众号</strong>
+                    <img src="images/weixin_code.png">
+                </div>
+            </a>
+        </li>
+        <li class="backto-top">
+            <a href="#" target="_blank">
+                <i>返回顶部</i>
+            </a>
+        </li>
+    </ul>
+
+    <!-- 底部链接图标 -->
+    <div class="footer-links">
+        <div>
+            <ul>
+                <li><i></i><a href="http://about.yaochufa.com/service" target="_blank">品质承诺</a></li>
+                <li><i class="link2"></i><a href="http://about.yaochufa.com/service" target="_blank">无房退款</a></li>
+                <li><i class="link3"></i><a href="http://e.weibo.com/yaochufa?ref=http%3A%2F%2Fwww.yaochufa.com%2F" target="_blank">关注我们</a></li>
+                <li><i class="link4"></i><a href="http://about.yaochufa.com/help_yuding" target="_blank">帮助中心</a></li>
+                <li><i class="link5"></i><a href="/app/" target="_blank">APP下载</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 右侧固定导航栏 -->
+    <ul class="fixed-navbar">
+        <li class="download-app">
+            <a href="#" target="_blank">
+                <i>扫二维码</i>
+                <div>
+                    <strong>下载要出发APP</strong>
+                    <img src="images/appcode.png">
+                </div>
+            </a>
+        </li>
+        <li class="service-tel">
+            <a href="#" target="_blank">
+                <i>客服电话</i>
+                <div>
+                    <span>24小时客服电话</span>
+                    <em>400-118-1166</em>
+                </div>
+            </a>
+        </li>
+        <li class="weixin">
+            <a href="#" target="_blank">
+                <i>关注微信</i>
+                <div>
+                    <strong>关注微信公众号</strong>
+                    <img src="images/weixin_code.png?v=1.0">
+                </div>
+            </a>
+        </li>
+        <li class="backto-top">
+            <a href="#" target="_blank">
+                <i>返回顶部</i>
+            </a>
+        </li>
+    </ul>
+    <!-- 公用底部模块 -->
+    <div class="footer">
+        <div class="wrapper">
+            <!-- 底部导航 -->
+            <dl class="first">
+                <dt>关于要出发</dt>
+                <dd><a href="http://about.yaochufa.com/Team" target="_blank">团队介绍</a></dd>
+                <dd><a href="http://job.yaochufa.com/" target="_blank">招聘信息</a></dd>
+                <dd><a href="http://about.yaochufa.com/ycf_news" target="_blank">新闻动态</a></dd>
+            </dl>
+            <dl>
+                <dt>帮助中心</dt>
+                <dd><a href="http://about.yaochufa.com/help_faq" target="_blank">常见问题</a></dd>
+                <dd><a href="http://about.yaochufa.com/help_jifen" target="_blank">积分规则</a></dd>
+                <dd><a href="http://about.yaochufa.com/help_xianjinquan" target="_blank">现金券规则</a></dd>
+                <dd><a href="http://about.yaochufa.com/help_yuding" target="_blank">预订说明</a></dd>
+                <dd><a href="http://about.yaochufa.com/help_tuangou" target="_blank">团购预约</a></dd>
+                <dd><a href="http://about.yaochufa.com/Pay" target="_blank">支付说明</a></dd>
+            </dl>
+            <dl>
+                <dt>客户服务</dt>
+                <dd><a href="http://about.yaochufa.com/service" target="_blank">品质承诺</a></dd>
+                <dd><a href="javascript:;">客服及投诉电话</a><strong>&nbsp;400-118-1166  / 020-62312938</strong></dd>
+                <dd><a href="http://www.yaochufa.com/tuan" target="_blank">自助预约</a></dd>
+                <dd><a href="http://about.yaochufa.com/contact" target="_blank">联系我们</a></dd>
+                <dd>广州市政务服务热线&nbsp;<strong>12345</strong></dd>
+            </dl>
+            <!-- 二维码 -->
+            <ul class="qr-code">
+                <li><a href="http://www.yaochufa.com/app/" target="_blank"><img src="images/appcode.png?v=3" alt="APP下载"></a>APP下载</li>
+                <li><img src="images/weixin_code.png" alt="微信公众号">微信公众号</li>
+            </ul>
+            <!-- 友情链接 --> <div class="links">
+                    <strong>友情链接：</strong>
+                                    <a href="http://www.movieroad.cn/" target="_blank" rel="nofollow">如影旅行网</a>
+                                    <a href="http://www.uyzjj.cn" target="_blank" rel="nofollow">张家界旅游攻略</a>
+                                    <a href="http://www.wuzhenba.com" target="_blank" rel="nofollow">乌镇旅游</a>
+                                    <a href="http://news.canpw.com" target="_blank" rel="nofollow">航空资讯网</a>
+                                    <a href="http://bbs.pcbaby.com.cn/pick-1828_postat.html" target="_blank" rel="nofollow">亲子游记</a>
+                                    <a href="http://www.nmglyw.com" target="_blank" rel="nofollow">内蒙古旅游网</a>
+                                    <a href="http://www.sichuanmap.com" target="_blank" rel="nofollow">四川旅游景点</a>
+                                    <a href="http://www.nbccts.com" target="_blank" rel="nofollow">宁波旅行社</a>
+                                    <a href="http://www.xf-td.com" target="_blank" rel="nofollow">深圳旅行社</a>
+                                    <a href="http://www.banyouguoji.com" target="_blank" rel="nofollow">伴游网</a>
+                                    <a href="http://www.pcpw.cn" target="_blank" rel="nofollow">深圳景点门票</a>
+                                    <a href="http://www.xiayizhan.cn" target="_blank" rel="nofollow">厦门户外</a>
+                                    <a href="http://www.beijingnongjiayuan.com" target="_blank" rel="nofollow">京郊自驾游 </a>
+                                    <a href="http://www.maichawang.com" target="_blank" rel="nofollow">买茶网</a>
+                                </div>
+                        <!-- 网站认证 -->
+            <div class="web-trust">
+                <a href="javascript:;" rel="nofollow">
+                    <img src="images/alipay.png" alt="支付宝特约商家">
+                </a>
+                <a href="http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?logo=440106106012011101200878" target="_blank" rel="nofollow">
+                    <img src="images/zhizhao.jpg" alt="要出发营业执照">
+                </a>
+                <a href="https://search.szfw.org/cert/l/CX20140912005110005176" target="_blank" rel="nofollow">
+                    <img src="images/chengxin.jpg" alt="诚信网站">
+                </a>
+                <a href="https://ss.knet.cn/verifyseal.dll?sn=e1409174401005395210ye000000" target="_blank" rel="nofollow">
+                    <img src="images/kexin.jpg" alt="可信网站省份验证">
+                </a>
+                <a href="http://www.anquan.org/authenticate/cert/?site=www.yaochufa.com&at=business" key="55027098c274e77b9dc448b6" logo_size="124x47" logo_type="business" rel="nofollow" class="anquan">
+                	<!--<script src="js/aq_auth.js"></script>--><img src="images/hy_124x47.png" alt="安全联盟" style="display: none">
+                </a>
+            </div>
+            <ul class="license">
+                <li><a href="http://cdn1.jinxidao.com/images/about/Telecom_ICP.jpg" target="_blank">中华人民共和国增值电信业务经营许可证 经营许可证编号：粤B2-20130613</a></li>
+                <li><a href="http://cdn7.jinxidao.com/images/license.jpg" target="_blank">旅行社业务经营许可证编号：L-GD01685</a></li>
+                <li><a href="http://www.miitbeian.gov.cn/" target="_blank">版权所有 &copy; 广州酷旅旅行社有限公司 2009-2016 粤ICP备11008339号</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--[if IE 6]>
+    <script src="js/clarity-png.js"></script>
+    <script>
+        DD_belatedPNG.fix('.logo img, .app img,.slideshow .prev, .slideshow .next, .around-tour .sm-left div, .choice-tour .sm-left div, .choice-tour .sm-left p, .footer-links i, .icon, .no-data img, .showmap, .price');
+    </script>
+    <![endif]-->
+    <script src="js/jquery.js"></script>
+    <script src="js/lazyload.js"></script>
+    <script src="js/common.js"></script>    <script src="js/index.js"></script>
+    <script type="text/javascript">
+    sessionId = "";
+    clientIp = "125.211.218.81";
+    userId = "";
+    cityCode = "";
+    logUrl = "http://tj.yaochufa.com/";
+    apiHeader2 = "MTQ3MjQyMjY2MyMsMy43LGpzLHBjLCNscDJlNDljOTYzYTM3ODZiMWM0NjI5ZWJlNWUwYjM3ZjM4a3Rwc2h1";
+    apiHeader2Version = "3.7";
+    apiHeader2System = "pc";
+    apiHeader2Lang = 'js';
+</script>
+<script src="js/user_analytics_pc.js"></script>
+<script src="js/zhugeio_config.js"></script>
+<script>
+    zhuge.track('进入页面',
+        {
+            '行为所属页面': '官网-进入页面' ,
+            '行为内容': location.href
+        }
+    );
+</script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?84c5b2688d39b4e3c23d132b53b4e79b";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    </body>
+</html>

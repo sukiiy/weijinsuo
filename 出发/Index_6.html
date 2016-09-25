@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <title>登录-要出发旅行网</title>
+        <meta name="keywords" content="特色酒店,度假酒店,酒店预订,精品酒店,商务酒店">
+        <meta name="description" content="要出发旅行网专为休闲度假提供,特色酒店,度假酒店,商务酒店,精品酒店,五星级酒店预订服务,电话：400-118-1166">
+            <link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/base_2.css">
+	<link rel="stylesheet" href="css/common_5.css">
+	<script>
+        var w_userInfo = 0;
+        var w_apiUrl = 'http://api.yaochufa.com/';
+        var w_apiVersion = '3.7';
+        var w_apiSystem = 'pc';
+        var w_currentUrl = 'http://www.yaochufa.com';
+        var w_siteUrl = 'http://www.yaochufa.com';
+        var w_apiphpUrl = 'http://apiphp.yaochufa.com/';
+        var w_header = 'gUTrvrB7YZhgRHvY%2FMdl%2BLJZcrV49SX5gViIYzLJ%2B%2FzCWravixPPuv21q%2B%2BHd5BF';
+        var payApiUrl = 'http://payapi.yaochufa.com/';
+        var w_provinceId = '21';
+    </script>	<script src="js/jquery.min.js"></script>
+	<script src="js/common_1.js"></script>
+        <link rel="stylesheet" href="css/yaochufa_login.css">
+        <link rel="stylesheet" href="css/inputmsg.css">
+    </head>
+    <body>
+        <!-- 公用头部模块 -->
+<div class="header">
+<div class="site-nav">
+    <div class="site-nav-bd">
+        <div class="fn-left top-l">
+            您好，欢迎来到要出发!
+            <span class="curProvince">广东</span><span class="changeCity">更换省份</span>
+            <div class="area_choose fn-hide" id="J_warehouse_wrap">
+                <dl>
+                    <dt>华南地区</dt>
+                    <dd>
+                        <span class="city-item" id="GuangDong">广东</span>
+                        <span class="city-item" id="HaiNan">海南</span>
+                        <span class="city-item" id="FuJian">福建</span>
+                        <span class="city-item" id="JiangXi">江西</span>
+                        <span class="city-item" id="GuangXiZhuangZu">广西</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>华东地区</dt>
+                    <dd>
+                        <span class="city-item" id="ShangHai">上海</span>
+                        <span class="city-item" id="ZheJiang">浙江</span>
+                        <span class="city-item" id="JiangSu">江苏</span>
+                        <span class="city-item" id="AnHui">安徽</span>
+                        <span class="city-item" id="ShanDong">山东</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>华北地区</dt>
+                    <dd>
+                        <span class="city-item" id="BeiJing">北京</span>
+                        <span class="city-item" id="TianJin">天津</span>
+                        <span class="city-item" id="HeBei">河北</span>
+                        <span class="city-item" id="ShanXi">山西</span>
+                        <!--<span class="city-item" id="NeiMengGu">内蒙古</span>-->
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>西南地区</dt>
+                    <dd>
+                        <span class="city-item" id="SiChuan">四川</span>
+                        <span class="city-item" id="ZhongQing">重庆</span>
+                        <span class="city-item" id="YunNan">云南</span>
+                        <span class="city-item" id="GuiZhou">贵州</span>
+                        <span class="city-item" id="XiCang">西藏</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>西北地区</dt>
+                    <dd>
+                        <span class="city-item" id="ShanXiSheng">陕西</span>
+                        <span class="city-item" id="GanSu">甘肃</span>
+                        <!--<span class="city-item" id="QingHai">青海</span>-->
+                        <!--<span class="city-item" id="NingXiaHuiZu">宁夏</span>-->
+                        <!--<span class="city-item" id="XinJiangWeiWuEr">新疆</span>-->
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>东北地区</dt>
+                    <dd>
+                        <span class="city-item" id="JiLin">吉林</span>
+                        <!--<span class="city-item" id="HeiLongJiang">黑龙江</span>-->
+                        <span class="city-item" id="LiaoNing">辽宁</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>华中地区</dt>
+                    <dd>
+                        <span class="city-item" id="HuNan">湖南</span>
+                        <span class="city-item" id="HuBei">湖北</span>
+                        <span class="city-item" id="HeNan">河南</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>港澳台</dt>
+                    <dd>
+                        <span class="city-item" id="XiangGang">香港</span>
+                        <span class="city-item" id="AoMen">澳门</span>
+                        <span class="city-item" id="TaiWan">台湾</span>
+                    </dd>
+                </dl>
+                <!--<dl>
+                    <dt class="jinwai">境外地区</dt>
+                    <dd class="jinwai">
+                        <span class="city-item" id="maerdaifu">马尔代夫</span>
+                        <span class="city-item" id="saisheer">塞舌尔</span>
+                        <span class="city-item" id="taiguo">泰国</span>
+                        <span class="city-item" id="malaixiya">马来西亚</span>
+                        <span class="city-item" id="xinjiapo">新加坡</span>
+                        <span class="city-item" id="maoliqiusi">毛里求斯</span>
+                        <span class="city-item" id="feilvbin">菲律宾</span>
+                        <span class="city-item" id="hanguo">韩国</span>
+                        <span class="city-item" id="riben">日本</span>
+                        <span class="city-item" id="yuenan">越南</span>
+                    </dd>
+                </dl>-->
+                <div class="prompt">*提示：根据你选择的省份，我们将为你切换至该地区的首页</div>
+            </div>
+        </div>
+        <div class="fn-right">
+            <div class="member-box">
+                请<a class="txte97727" href="http://www.yaochufa.com/user/login?returnurl=http://you.yaochufa.com/funny">登录</a>，<a class="txte97727" href="http://www.yaochufa.com/user/register?returnurl=http://you.yaochufa.com/funny">[免费注册]</a><span class="reg-txt">注册账号立送30元现金券</span>            </div>
+            <div class="recently-box">
+                <span class="navLine">|</span><span class="recently-viewed">最近浏览</span>
+                <div class="recentlyListBox">
+                    <ul></ul>
+                </div>
+            </div>
+            <div class="service-box">
+                <span class="navLine">|</span><span><a href="#" class="mobile">手机APP<img src="images/photo-app.png"></a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="head fn-clear">
+    <div class="logo fn-left"><a href="http://www.yaochufa.com/"><img src="images/logo-271x76.png" alt="要出发精选周边游"></a></div>
+    <div class="search-warp">
+        <div class="search">
+            <div class="text">
+                <input type="text" name="txtSearchKey" id="txtSearchKey" value="目的地，酒店，景点关键字">
+                <input type="text" style="display:  none;">
+            </div>
+            <div class="button" type="button" value="" id="buttonJump" data-site="http://www.yaochufa.com" data-search="http://s.yaochufa.com">搜索</div>
+            <div id="hKwordCon" class="search-box"></div>
+            <script>
+
+                /* 失焦聚焦搜索框操作 */
+                var $searchBox = $('#txtSearchKey');
+                $searchBox.on('focus', function(){
+                    if($.trim($(this).val()) == this.defaultValue) {
+                        this.value = '';
+                    }
+                }).on('blur', function(){
+                        if($.trim($(this).val()) == '') {
+                            this.value =this.defaultValue;
+                        }
+                    });
+
+                /* 提交搜索 */
+                var $subSearch = $('#buttonJump');
+                $subSearch.on('click', function(){
+                    var $this = $(this);
+                    var searchKey = $.trim($('#txtSearchKey').val());
+                    var defaultValue = document.getElementById('txtSearchKey').defaultValue;
+                    var searchUrl = $this.attr('data-search');
+                    var curProvince =$('.curProvince').text();
+                    if(searchKey == '' || searchKey == defaultValue) {
+                        window.location = searchUrl;
+                    } else {
+                        window.location = searchUrl + '/k_' + searchKey;
+                    }
+                    return false;
+                });
+
+                /* 搜索enter键 */
+                $searchBox.keyup(function (e) {
+                    var code = e.keyCode;
+                    if (code == 13) {
+                        $subSearch.trigger('click');
+                    }
+                });
+
+            </script>
+        </div>
+    </div>
+    <div class="user-feature fn-right">
+        <a href="http://www.yaochufa.com/usercenter/index" class="user-feature-link my_ycf">我的要出发</a><a href="http://www.yaochufa.com/usercenter/ordersearch" class="user-feature-link my_order">订单查询</a>    </div>
+</div>
+<div class="top-menu fn-clear">
+    <!--http://www.yaochufa.com-->
+    <ul id="main-menu">
+        <li class="menu-cur"><a href="http://www.yaochufa.com/">周边游推荐</a></li>
+        <li><a href="http://www.yaochufa.com/">首页</a></li>
+        <li><a href="http://www.yaochufa.com/neworder">每周新品</a></li>
+        <li><a href="http://you.yaochufa.com/funny" id="you-link">好去处</a></li>
+        <li><a href="http://www.yaochufa.com/tuan">团购预约</a></li>
+        <li><a href="http://www.yaochufa.com/app">手机版下载</a></li>
+    </ul>
+    <!--<script>
+
+        /* 设置域名 */
+        var siteUrl1 = 'www.yaochufa.com';
+        var siteUrl2 = 'yaochufa.com';
+        var siteUrl3 = 'dev.yaochufa.com'; //设置本地调试地址
+        var host = location.host;
+        var domain = '';
+        switch(host){
+            case siteUrl1 || siteUrl2:
+                domain = siteUrl1;
+                break;
+
+            case siteUrl3:
+                domain = siteUrl3;
+                break;
+
+            default:
+                domain = siteUrl1;
+        }
+        domain = 'http://' + domain;
+
+        /* 设置主导航菜单地址 */
+        var ul = document.getElementById('main-menu');
+        var a = ul.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++) {
+            var id = a[i].getAttribute('id');
+            var href = a[i].getAttribute('href');
+            if(id != 'you-link') {
+                a[i].href = domain + href;
+            }
+        }
+
+    </script>-->
+</div>
+</div>
+<script>
+
+    /* 订单列表类型跳转 */
+    function goData(typeData) {
+        window.open("http://www.yaochufa.com/usercenter/orderlist?type=" + typeData,'_self');
+    }
+
+    $(function() {
+
+        /* 如果用户已经登陆，异步获取订单基本信息 */
+        if(w_userInfo){
+            $.ajax({
+                type: 'GET',
+                url: w_apiUrl + '/v2/User/UserProfile',
+                dataType: 'JSONP',
+                data: {
+                    system: w_apiSystem,
+                    version: w_apiVersion,
+                    securityKey: w_userInfo.securityKey
+                },
+                success: function(result) {
+                    if(result.success){
+                        var data = result.data;
+                        var orderCompletedCount = data.orderCompletedCount ? data.orderCompletedCount : (data.orderCanReviewCount + data.orderReviewedCount);
+                        $('#user-name').html(data.userName);
+                        $('#order_left2,#top_order_left2,#center_order_index2').html('(' + data.orderAllNoPayCount + ')'); /* 未付款订单 */
+                        $('#order_left5,#top_order_left5,#center_order_index5').html('(' + data.orderPaidCount + ')'); /* 已付款订单 */
+                        $('#order_left4,#center_order_index4').html('(' + orderCompletedCount + ')'); /* 已完成 */
+                        $('#jifen_left').html('(' + data.credits + ')'); /* 积分 */
+                        $('#coupons_left,#top_coupons_left').html('(' + data.couponCount + ')'); /* 现金劵 */
+                        $('#hotelCollect_left').html('(' + data.favoriteCount + ')'); /* 收藏 */
+                        $('#comment_left,#top_comment_left').html('(' + data.orderReviewedCount + ')'); /* 评价 */
+                        $('#coupons_left_top').html('(' + data.couponCount + ')'); /* 现金劵总金额 */
+                        $('#jifen_left_top').html(data.credits) /* 总积分 */
+
+                        // 积分冻结，给多页面使用
+                        if(!data.isIntegralActive){
+                            $(document.body).addClass('integral-frozen');
+                            if(!$.cookies.get('firstFrozen') && window.checkFrozen){
+                                APP.commonPopStyle({
+                                    title: '积分冻结提醒',
+                                    text: '很抱歉的通知您，您因违反要出发相关规定，积分账户已被冻结。如有疑问请致电400-118-1166或关注微信服务号“yaochufa”回复留言。',
+                                    acceptWord: '我知道了',
+                                    accept: function() {},
+                                    close: true
+                                });
+                                $.cookies.set('firstFrozen', 1, 365);
+                            }
+                        }
+
+                        // 当积分解冻的时候，恢复cookie
+                        if(data.isIntegralActive){
+                            $.cookies.remove('firstFrozen');
+                        }
+                    }
+                }
+            });
+        }
+
+    });
+</script>        <div class="content">
+            <div id="loginBox">
+                <div class="loginLeft"></div>
+                <div class="loginRight">
+                    <div class="loginContent">
+                        <div class="clearfix lcTop">
+                            <h2 class="lcLoginTxt">用户登录</h2>
+                            <span><a class="lcRegister" href="/user/register?returnurl=http://you.yaochufa.com/funny">免费注册</a>|<a href="/user/resetpassword" class="lcForgetPasswd">忘记密码</a></span>
+                        </div>
+                        <div class="lcUserName">
+                            <input name="ctl00$ContentPlaceHolder1$username" type="text" id="username" class="placeHolder" data-placeholder="请输入您已注册的手机号" />
+                            <span class="ms_text">(必填)请输入您的账号！</span>
+                            <i></i>
+                        </div>
+                        <div class="lcPasswd">
+                            <input name="ctl00$ContentPlaceHolder1$password" type="password" id="password" class="placeHolder" data-placeholder="请输入密码或者短信验证码" />
+                            <span class="ms_text">(必填)请输入您的密码！</span>
+                            <i></i>
+                        </div>
+                        <p class="codeModelLogin"  id="codeModelLogin" style="display:none;">
+                            <img alt="点击换图" align="absmiddle" id="verifchange" src="images/1cbd638268ec4eb6a8c597a831cabce8.gif" />                            <span><input name="login_verifi_code" type="text" id="login_code" tabindex="3" size="6" class="loginCode" style="width:60px" /></span>
+                            <input type="hidden" id="verifkeyvalue" name="verifkeyvalue" value="" />
+                        </p>
+                        <div class="lcCode">
+                            <b>可以使用短信验证码登录</b>
+                            <span class="getCodeBtn" id="sendMsgBtn">发送短信验证码</span>
+                        </div>
+                        <p class="labMsgValidate"><span id="labMsgValidate"></span></p>
+                        <p id="labmsg" class="labmsg"></p>
+                        <div class="lcLogin">
+                            <input type="button" class="loginBtn" id="loginBtn" value="登 录"/>
+                            <input type="hidden" id="returnurl" name="returnurl" value="http://you.yaochufa.com/funny" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--明文加密 start-->
+        <script type="text/javascript">
+        	var secretkey = "O1LEKCaOer6e7M7KXmOoq2Sq6sbr9wthJ84ziAuwjkr3IXS1aYMOnA%3D%3D";
+            var publickey = "caa50381f53e882688be71949ffb8aabec1a6ad006ff4eaff5f6de22fab5a38d3e833c02bb8e17919c88b86408b780728c418af287f50f89c2c75b8a7a8b1f8eb154bab67cba7ede2976bc4baa1e63d8a2a24c165b9e0eca7954aec58ee193a124ec9cc708422f5b0e225e923937903c2cc03481c5facf33e341240a585f59a3";
+        </script>
+        <script src="js/jsbn.js"></script>
+        <script src="js/jsbn2.js"></script>
+        <script src="js/prng4.js"></script>
+        <script src="js/rng.js"></script>
+        <script src="js/rsa.js"></script>
+        <script src="js/rsa2.js"></script>
+        <!--明文加密 end-->
+        <script src="js/inputmsg.js"></script>
+        <script src="js/inputplaceholder.js"></script>
+        <script src="js/login.js"></script>
+        	<!-- 公用底部模块 -->
+	<div class="footer">
+		<div class="footer-wrapper">
+			<dl>
+				<dt>关于要出发</dt>
+				<dd><a href="http://about.yaochufa.com/Team" target="_blank">团队介绍</a></dd>
+				<dd><a href="http://job.yaochufa.com/" target="_blank">招聘信息</a></dd>
+				<dd><a href="http://about.yaochufa.com/ycf_news" target="_blank">新闻动态</a></dd>
+			</dl>
+			<dl>
+				<dt>帮助中心</dt>
+				<dd><a href="http://about.yaochufa.com/help_faq" target="_blank">常见问题</a></dd>
+				<dd><a href="http://about.yaochufa.com/help_jifen" target="_blank">积分规则</a></dd>
+				<dd><a href="http://about.yaochufa.com/help_xianjinquan" target="_blank">现金券规则</a></dd>
+				<dd><a href="http://about.yaochufa.com/help_yuding" target="_blank">预订说明</a></dd>
+				<dd><a href="http://about.yaochufa.com/help_tuangou" target="_blank">预约链接</a></dd>
+				<dd><a href="http://about.yaochufa.com/Pay" target="_blank">支付说明</a></dd>
+			</dl>
+			<dl>
+				<dt>客户服务</dt>
+				<dd><a href="http://about.yaochufa.com/service" target="_blank">品质承诺</a></dd>
+				<dd><a href="javascript:;">客服及投诉电话</a><strong>&nbsp;400-118-1166  / 020-62312938</strong></dd>
+				<dd><a href="http://www.yaochufa.com/tuan" target="_blank">自助预约</a></dd>
+				<dd><a href="http://about.yaochufa.com/contact" target="_blank">联系我们</a></dd>
+				<dd>广州市政务服务热线&nbsp;<strong>12345</strong></dd>
+			</dl>
+			<ul class="qr-code">
+				<li><a href="http://www.yaochufa.com/app/" target="_blank"><img src="images/appcode_1.png" alt="APP下载"></a>APP下载</li>
+				<li><img src="images/weixin_code_1.png" alt="微信公众号">微信公众号</li>
+			</ul>
+						<div class="web-trust">
+				<a href="javascript:;" rel="nofollow"><img src="images/alipay.png" alt="支付宝特约商家"></a>
+				<a href="http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?logo=440106106012011101200878" target="_blank" rel="nofollow"><img src="images/zhizhao.jpg" alt="要出发营业执照"></a>
+				<a href="https://search.szfw.org/cert/l/CX20140912005110005176" target="_blank" rel="nofollow"><img src="images/chengxin.jpg" alt="诚信网站"></a>
+				<a href="https://ss.knet.cn/verifyseal.dll?sn=e1409174401005395210ye000000" target="_blank" rel="nofollow"><img src="images/kexin.jpg" alt="可信网站省份验证"></a>
+				<a href="http://www.anquan.org/authenticate/cert/?site=www.yaochufa.com&at=business" key ="55027098c274e77b9dc448b6" logo_size="124x47" logo_type="business" rel="nofollow" class="anquan fn"><!--<script src="js/aq_auth.js"></script>--><img src="images/hy_124x47.png" alt="安全联盟" style="display: none"></a>
+			</div>
+			<ul class="license">
+				<li><a href="http://cdn1.jinxidao.com/images/about/Telecom_ICP.jpg" target="_blank">中华人民共和国增值电信业务经营许可证 经营许可证编号：粤B2-20130613</a></li>
+				<li><a href="http://cdn7.jinxidao.com/images/license.jpg" target="_blank">旅行社业务经营许可证编号：L-GD01685</a></li>
+				<li><a href="http://www.miitbeian.gov.cn/" target="_blank">版权所有 © 广州酷旅旅行社有限公司 2009-2016 粤ICP备11008339号</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+
+
+
+
+        <script type="text/javascript">
+    sessionId = "";
+    clientIp = "1.180.237.255";
+    userId = "";
+    cityCode = "";
+    logUrl = "http://tj.yaochufa.com/";
+    apiHeader2 = "MTQ3MjQyODM1NSMsMy43LGpzLHBjLCMxbWFlZmY5MTA2ODJlOGJlZjdmOGJmOGRmNGQ4NGFjMDFmN281Y3A5";
+    apiHeader2Version = "3.7";
+    apiHeader2System = "pc";
+    apiHeader2Lang = 'js';
+</script>
+<script src="js/user_analytics_pc.js"></script>
+<script src="js/zhugeio_config.js"></script>
+<script>
+    zhuge.track('进入页面',
+        {
+            '行为所属页面': '官网-进入页面' ,
+            '行为内容': location.href
+        }
+    );
+</script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?84c5b2688d39b4e3c23d132b53b4e79b";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+        <script type="text/javascript">
+/*<![CDATA[*/
+jQuery('#verifchange').after("<a id=\"verifchange_button\" href=\"\/user\/captcha\/refresh\/1\">\u6362\u4e00\u5f20<\/a>");
+jQuery(document).on('click', '#verifchange_button, #verifchange', function(){
+	jQuery.ajax({
+		url: "\/user\/captcha\/refresh\/1",
+		dataType: 'json',
+		cache: false,
+		success: function(data) {
+			jQuery('#verifchange').attr('src', data['url']);
+			jQuery('body').data('captcha.hash', [data['hash1'], data['hash2']]);
+		}
+	});
+	return false;
+});
+
+/*]]>*/
+</script>
+</body>
+</html>

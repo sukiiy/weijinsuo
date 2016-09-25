@@ -1,0 +1,3 @@
+﻿文件下载网址  =>  文件保存路径
+about:blank  =>  E:\yst_soft\4.14前端课堂所需软件最新版\扒网页的小工具\look\单页扒站小工具\www.yaochufa.com\images\df23bedd51bc48b2bfd50c49da2e240d.gif
+http://cdn7.jinxidao.com/images/tag_1.gif  =>  E:\yst_soft\4.14前端课堂所需软件最新版\扒网页的小工具\look\单页扒站小工具\www.yaochufa.com\images\tag_1.gif
